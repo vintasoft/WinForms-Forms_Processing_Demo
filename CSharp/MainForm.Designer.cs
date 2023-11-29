@@ -28,11 +28,15 @@ namespace FormsProcessingDemo
         /// </summary>
         private void InitializeComponent()
         {
+            Vintasoft.Imaging.Utils.WinFormsSystemClipboard winFormsSystemClipboard1 = new Vintasoft.Imaging.Utils.WinFormsSystemClipboard();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance1 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance2 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance3 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance4 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance5 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
+            Vintasoft.Imaging.UI.ThumbnailCaption thumbnailCaption1 = new Vintasoft.Imaging.UI.ThumbnailCaption();
+            Vintasoft.Imaging.Codecs.Decoders.RenderingSettings renderingSettings1 = new Vintasoft.Imaging.Codecs.Decoders.RenderingSettings();
+            Vintasoft.Imaging.Codecs.Decoders.RenderingSettings renderingSettings2 = new Vintasoft.Imaging.Codecs.Decoders.RenderingSettings();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,8 +171,8 @@ namespace FormsProcessingDemo
             // addFilledImagesToolStripMenuItem
             // 
             this.addFilledImagesToolStripMenuItem.Name = "addFilledImagesToolStripMenuItem";
-            this.addFilledImagesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.O)));
+            this.addFilledImagesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.O)));
             this.addFilledImagesToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.addFilledImagesToolStripMenuItem.Text = "Add Filled Images...";
             this.addFilledImagesToolStripMenuItem.Click += new System.EventHandler(this.addFilledImagesToolStripMenuItem_Click);
@@ -234,82 +238,82 @@ namespace FormsProcessingDemo
             // normalImageToolStripMenuItem
             // 
             this.normalImageToolStripMenuItem.Name = "normalImageToolStripMenuItem";
-            this.normalImageToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.normalImageToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.normalImageToolStripMenuItem.Text = "Normal";
             this.normalImageToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // bestFitToolStripMenuItem
             // 
             this.bestFitToolStripMenuItem.Name = "bestFitToolStripMenuItem";
-            this.bestFitToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.bestFitToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.bestFitToolStripMenuItem.Text = "Best fit";
             this.bestFitToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // fitToWidthToolStripMenuItem
             // 
             this.fitToWidthToolStripMenuItem.Name = "fitToWidthToolStripMenuItem";
-            this.fitToWidthToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.fitToWidthToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.fitToWidthToolStripMenuItem.Text = "Fit to width";
             this.fitToWidthToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // fitToHeightToolStripMenuItem
             // 
             this.fitToHeightToolStripMenuItem.Name = "fitToHeightToolStripMenuItem";
-            this.fitToHeightToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.fitToHeightToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.fitToHeightToolStripMenuItem.Text = "Fit to height";
             this.fitToHeightToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // scaleToolStripMenuItem
             // 
             this.scaleToolStripMenuItem.Name = "scaleToolStripMenuItem";
-            this.scaleToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.scaleToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.scaleToolStripMenuItem.Text = "Scale";
             this.scaleToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // pixelToPixelToolStripMenuItem
             // 
             this.pixelToPixelToolStripMenuItem.Name = "pixelToPixelToolStripMenuItem";
-            this.pixelToPixelToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.pixelToPixelToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.pixelToPixelToolStripMenuItem.Text = "Pixel to pixel";
             this.pixelToPixelToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // toolStripSeparatorZoomModes
             // 
             this.toolStripSeparatorZoomModes.Name = "toolStripSeparatorZoomModes";
-            this.toolStripSeparatorZoomModes.Size = new System.Drawing.Size(136, 6);
+            this.toolStripSeparatorZoomModes.Size = new System.Drawing.Size(138, 6);
             // 
             // scale25ToolStripMenuItem
             // 
             this.scale25ToolStripMenuItem.Name = "scale25ToolStripMenuItem";
-            this.scale25ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.scale25ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.scale25ToolStripMenuItem.Text = "25%";
             this.scale25ToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // scale50ToolStripMenuItem
             // 
             this.scale50ToolStripMenuItem.Name = "scale50ToolStripMenuItem";
-            this.scale50ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.scale50ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.scale50ToolStripMenuItem.Text = "50%";
             this.scale50ToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // scale100ToolStripMenuItem
             // 
             this.scale100ToolStripMenuItem.Name = "scale100ToolStripMenuItem";
-            this.scale100ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.scale100ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.scale100ToolStripMenuItem.Text = "100%";
             this.scale100ToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // scale200ToolStripMenuItem
             // 
             this.scale200ToolStripMenuItem.Name = "scale200ToolStripMenuItem";
-            this.scale200ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.scale200ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.scale200ToolStripMenuItem.Text = "200%";
             this.scale200ToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
             // scale400ToolStripMenuItem
             // 
             this.scale400ToolStripMenuItem.Name = "scale400ToolStripMenuItem";
-            this.scale400ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.scale400ToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.scale400ToolStripMenuItem.Text = "400%";
             this.scale400ToolStripMenuItem.Click += new System.EventHandler(this.imageViewer_ImageScale_Click);
             // 
@@ -319,14 +323,14 @@ namespace FormsProcessingDemo
             this.rotateClockwiseToolStripMenuItem,
             this.counterclockwiseToolStripMenuItem});
             this.rotateViewToolStripMenuItem.Name = "rotateViewToolStripMenuItem";
-            this.rotateViewToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.rotateViewToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.rotateViewToolStripMenuItem.Text = "Rotate View";
             // 
             // rotateClockwiseToolStripMenuItem
             // 
             this.rotateClockwiseToolStripMenuItem.Name = "rotateClockwiseToolStripMenuItem";
             this.rotateClockwiseToolStripMenuItem.ShortcutKeyDisplayString = "Shift+Ctrl+Plus";
-            this.rotateClockwiseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.rotateClockwiseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Oemplus)));
             this.rotateClockwiseToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.rotateClockwiseToolStripMenuItem.Text = "Clockwise";
@@ -336,7 +340,7 @@ namespace FormsProcessingDemo
             // 
             this.counterclockwiseToolStripMenuItem.Name = "counterclockwiseToolStripMenuItem";
             this.counterclockwiseToolStripMenuItem.ShortcutKeyDisplayString = "Shift+Ctrl+Minus";
-            this.counterclockwiseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.counterclockwiseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.OemMinus)));
             this.counterclockwiseToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.counterclockwiseToolStripMenuItem.Text = "Counterclockwise";
@@ -412,7 +416,7 @@ namespace FormsProcessingDemo
             this.toolStripSeparator2,
             this.templateMatchingVisualizerToolStripMenuItem});
             this.templateMatchingToolStripMenuItem.Name = "templateMatchingToolStripMenuItem";
-            this.templateMatchingToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.templateMatchingToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.templateMatchingToolStripMenuItem.Text = "Template Matching";
             // 
             // templateMatchingConfidenceToolStripMenuItem
@@ -548,9 +552,9 @@ namespace FormsProcessingDemo
             // 
             // splitContainerLeft
             // 
-            this.splitContainerLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainerLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainerLeft.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerLeft.Location = new System.Drawing.Point(0, 52);
             this.splitContainerLeft.Name = "splitContainerLeft";
@@ -571,6 +575,7 @@ namespace FormsProcessingDemo
             this.sourceThumbnailViewer.AllowDrop = true;
             this.sourceThumbnailViewer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.sourceThumbnailViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sourceThumbnailViewer.Clipboard = winFormsSystemClipboard1;
             this.sourceThumbnailViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             thumbnailAppearance1.BackColor = System.Drawing.Color.Transparent;
             thumbnailAppearance1.BorderColor = System.Drawing.Color.Gray;
@@ -582,6 +587,7 @@ namespace FormsProcessingDemo
             thumbnailAppearance2.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             thumbnailAppearance2.BorderWidth = 2;
             this.sourceThumbnailViewer.HoveredThumbnailAppearance = thumbnailAppearance2;
+            this.sourceThumbnailViewer.ImageRotationAngle = 0;
             this.sourceThumbnailViewer.Location = new System.Drawing.Point(0, 0);
             this.sourceThumbnailViewer.MasterViewer = this.filledImageViewer;
             this.sourceThumbnailViewer.Name = "sourceThumbnailViewer";
@@ -603,19 +609,27 @@ namespace FormsProcessingDemo
             thumbnailAppearance5.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             thumbnailAppearance5.BorderWidth = 1;
             this.sourceThumbnailViewer.ThumbnailAppearance = thumbnailAppearance5;
+            thumbnailCaption1.Padding = new Vintasoft.Imaging.PaddingF(0F, 0F, 0F, 0F);
+            thumbnailCaption1.TextColor = System.Drawing.Color.Black;
+            this.sourceThumbnailViewer.ThumbnailCaption = thumbnailCaption1;
+            this.sourceThumbnailViewer.ThumbnailControlPadding = new Vintasoft.Imaging.PaddingF(0F, 0F, 0F, 0F);
             this.sourceThumbnailViewer.ThumbnailFlowStyle = Vintasoft.Imaging.UI.ThumbnailFlowStyle.WrappedRows;
+            this.sourceThumbnailViewer.ThumbnailImagePadding = new Vintasoft.Imaging.PaddingF(0F, 0F, 0F, 0F);
             this.sourceThumbnailViewer.ThumbnailMargin = new System.Windows.Forms.Padding(3);
             this.sourceThumbnailViewer.ThumbnailRenderingThreadCount = 4;
             this.sourceThumbnailViewer.ThumbnailSize = new System.Drawing.Size(100, 100);
             // 
             // filledImageViewer
             // 
-            this.filledImageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.filledImageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.filledImageViewer.BackColor = System.Drawing.SystemColors.Control;
             this.filledImageViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.filledImageViewer.Clipboard = winFormsSystemClipboard1;
             this.filledImageViewer.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.filledImageViewer.ImageRenderingSettings = renderingSettings1;
+            this.filledImageViewer.ImageRotationAngle = 0;
             this.filledImageViewer.Location = new System.Drawing.Point(3, 46);
             this.filledImageViewer.Name = "filledImageViewer";
             this.filledImageViewer.ShortcutCopy = System.Windows.Forms.Shortcut.None;
@@ -631,9 +645,9 @@ namespace FormsProcessingDemo
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.filledImageTabPage);
             this.tabControl1.Controls.Add(this.recognizedImageTabPage);
             this.tabControl1.Controls.Add(this.recognitionResultTabPage);
@@ -659,8 +673,8 @@ namespace FormsProcessingDemo
             // 
             // filledImageFilenameLabel
             // 
-            this.filledImageFilenameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.filledImageFilenameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.filledImageFilenameLabel.Location = new System.Drawing.Point(6, 12);
             this.filledImageFilenameLabel.Name = "filledImageFilenameLabel";
             this.filledImageFilenameLabel.Size = new System.Drawing.Size(600, 20);
@@ -682,8 +696,8 @@ namespace FormsProcessingDemo
             // 
             // matchingTemplateNameLabel
             // 
-            this.matchingTemplateNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.matchingTemplateNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.matchingTemplateNameLabel.Location = new System.Drawing.Point(6, 12);
             this.matchingTemplateNameLabel.Name = "matchingTemplateNameLabel";
             this.matchingTemplateNameLabel.Size = new System.Drawing.Size(500, 20);
@@ -693,11 +707,14 @@ namespace FormsProcessingDemo
             // 
             // recognizedImageViewer
             // 
-            this.recognizedImageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.recognizedImageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.recognizedImageViewer.BackColor = System.Drawing.SystemColors.Control;
             this.recognizedImageViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.recognizedImageViewer.Clipboard = winFormsSystemClipboard1;
+            this.recognizedImageViewer.ImageRenderingSettings = renderingSettings2;
+            this.recognizedImageViewer.ImageRotationAngle = 0;
             this.recognizedImageViewer.Location = new System.Drawing.Point(3, 46);
             this.recognizedImageViewer.Name = "recognizedImageViewer";
             this.recognizedImageViewer.ShortcutCopy = System.Windows.Forms.Shortcut.None;
@@ -723,8 +740,8 @@ namespace FormsProcessingDemo
             // 
             // recognitionResultLabel
             // 
-            this.recognitionResultLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.recognitionResultLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.recognitionResultLabel.Location = new System.Drawing.Point(6, 12);
             this.recognitionResultLabel.Name = "recognitionResultLabel";
             this.recognitionResultLabel.Size = new System.Drawing.Size(500, 20);
@@ -734,9 +751,9 @@ namespace FormsProcessingDemo
             // 
             // recognitionResultTextBox
             // 
-            this.recognitionResultTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.recognitionResultTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.recognitionResultTextBox.Location = new System.Drawing.Point(3, 46);
             this.recognitionResultTextBox.Multiline = true;
             this.recognitionResultTextBox.Name = "recognitionResultTextBox";
@@ -757,9 +774,9 @@ namespace FormsProcessingDemo
             // 
             // recognitionLogTextBox
             // 
-            this.recognitionLogTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.recognitionLogTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.recognitionLogTextBox.Location = new System.Drawing.Point(3, 3);
             this.recognitionLogTextBox.Multiline = true;
             this.recognitionLogTextBox.Name = "recognitionLogTextBox";
@@ -773,13 +790,13 @@ namespace FormsProcessingDemo
             this.filledImageViewerToolStrip.AssociatedZoomTrackBar = null;
             this.filledImageViewerToolStrip.CanPrint = false;
             this.filledImageViewerToolStrip.CanSaveFile = false;
+            this.filledImageViewerToolStrip.CaptureFromCameraButtonEnabled = true;
             this.filledImageViewerToolStrip.ImageViewer = this.filledImageViewer;
-            this.filledImageViewerToolStrip.ScanButtonEnabled = true;
             this.filledImageViewerToolStrip.Location = new System.Drawing.Point(0, 24);
             this.filledImageViewerToolStrip.Name = "filledImageViewerToolStrip";
             this.filledImageViewerToolStrip.PageCount = 0;
             this.filledImageViewerToolStrip.PrintButtonEnabled = true;
-            this.filledImageViewerToolStrip.SaveButtonEnabled = true;
+            this.filledImageViewerToolStrip.ScanButtonEnabled = true;
             this.filledImageViewerToolStrip.Size = new System.Drawing.Size(884, 25);
             this.filledImageViewerToolStrip.TabIndex = 0;
             this.filledImageViewerToolStrip.Text = "imageViewerToolStrip1";

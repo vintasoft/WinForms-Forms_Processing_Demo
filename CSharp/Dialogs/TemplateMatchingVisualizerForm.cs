@@ -376,7 +376,7 @@ namespace FormsProcessingDemo
             {
                 // if filled form image must be aligned to the template form image
                 if (_alignFilledImage)
-                    // transfrom zones of filled form image
+                    // transform zones of filled form image
                     TransformZones(_transformationMatrix, filledZones, !_alignFilledImage);
                 // if filled form image must NOT be aligned to the template form image
                 else
@@ -642,7 +642,7 @@ namespace FormsProcessingDemo
                     new HalftoneRemovalCommand(),
                     new DilateCommand(),
                     new ErodeCommand(),
-                    new BorderClearCommand()
+                    new BorderClearCommand(),
             };
 #endif
 
@@ -882,10 +882,10 @@ namespace FormsProcessingDemo
             MessageBox.Show(report.ToString(), "Info", MessageBoxButtons.OK, icon);
         }
 
-#endregion
+        #endregion
 
 
-#region KeyZones manipulation
+        #region KeyZones manipulation
 
         /// <summary>
         /// Returns distance between two points.
@@ -1048,10 +1048,10 @@ namespace FormsProcessingDemo
                 zone.Transform(transformMatrix);
         }
 
-#endregion
+        #endregion
 
 
-#region 'Color Of Key Zones' groupBox
+        #region 'Color Of Key Zones' groupBox
 
         /// <summary>
         /// Color of filled form image key zones is changed.
@@ -1096,10 +1096,10 @@ namespace FormsProcessingDemo
             UpdateKeyZonesOnTemplateImageViewer();
         }
 
-#endregion
+        #endregion
 
 
-#region ToolStrip
+        #region ToolStrip
 
         /// <summary>
         /// Updates zoom value in text box.
@@ -1249,10 +1249,10 @@ namespace FormsProcessingDemo
             return zoomValue * (maxSecondResolutionComponent / maxFirstResolutionComponent);
         }
 
-#endregion
+        #endregion
 
 
-#region File manipulation
+        #region File manipulation
 
         /// <summary> 
         /// Opens image files and adds to the image collection of image viewer.
@@ -1326,13 +1326,15 @@ namespace FormsProcessingDemo
                     }
                 }
 
+
+
                 viewer.Image = image;
             }
         }
 
-#endregion
+        #endregion
 
-#endregion
+        #endregion
 
     }
 }

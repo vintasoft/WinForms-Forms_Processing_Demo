@@ -86,6 +86,11 @@ namespace FormsProcessingDemo
         bool _enabledKeyLPatternRecognizer = false;
 
         /// <summary>
+        /// A value indicating whether key words (OCR) recognizer is enabled.
+        /// </summary>
+        bool _enabledKeyWordsRecognizer = false;
+
+        /// <summary>
         /// Key zone recognizers, which are used in form processing.
         /// </summary>
         KeyZoneRecognizerCommand[] _keyZoneRecognizerCommands;
@@ -172,36 +177,13 @@ namespace FormsProcessingDemo
 
             InitImageScaleMenu();
 
-            // init "Template Matching" => "Image Imprint Generator" 
-            lineRecognizerToolStripMenuItem.Tag = "KeyLine";
-            patternRecognizerToolStripMenuItem.Tag = "KeyLPattern";
-            lineAndPatternRecognizerToolStripMenuItem.Tag = "All";
-            _keyZoneRecognizerCommands = new KeyZoneRecognizerCommand[] { 
-                        new KeyLineRecognizerCommand(),
-                        new KeyMarkRecognizerCommand()
-            };
-            _selectedKeyZoneRecognizerCommands = new KeyZoneRecognizerCommand[] {
-                _keyZoneRecognizerCommands[0]
-            };
-
-
-            _recognizedFieldViewerTool = new FormFieldViewerTool();
-            _recognizedFieldViewerTool.MouseClick += new VisualToolMouseEventHandler(recognizedFieldViewerTool_MouseClick);
-            _recognizedFieldViewerTool.FieldViewMouseEnter += new EventHandler<FormFieldViewEventArgs>(recognizedFieldViewerTool_FieldViewMouseEnter);
-            _recognizedFieldViewerTool.FieldViewMouseLeave += new EventHandler<FormFieldViewEventArgs>(recognizedFieldViewerTool_FieldViewMouseLeave);
-            recognizedImageViewer.VisualTool = _recognizedFieldViewerTool;
-
-            _formRecognitionManager = new FormRecognitionManager();
-            _formRecognitionManager.TemplateMatching.ImageImprintGenerator = CreateImageImprintGenerator(null);
-
-            _binarizeCommand = new ChangePixelFormatToBlackWhiteCommand(BinarizationMode.Global);
-            _renderingSettings = new RenderingSettings(300, 300);
-
 #if !REMOVE_OCR_PLUGIN
+            OcrEngineManager ocrEngineManager = null;
             try
             {
                 _ocrEngine = new TesseractOcr(TesseractOcrDllDirectory);
-                OcrFieldTemplate.OcrEngineManager = new OcrEngineManager(_ocrEngine);
+                ocrEngineManager = new OcrEngineManager(_ocrEngine);
+                OcrFieldTemplate.OcrEngineManager = ocrEngineManager;
             }
             catch (Exception ex)
             {
@@ -221,7 +203,35 @@ namespace FormsProcessingDemo
 
             _defaultOcrRecognitionRegionSplittingSettings =
                 (OcrRecognitionRegionSplittingSettings)OcrRecognitionRegionSplittingSettings.Default.Clone();
+
+
 #endif
+
+            // init "Template Matching" => "Image Imprint Generator" 
+            lineRecognizerToolStripMenuItem.Tag = "KeyLine";
+            patternRecognizerToolStripMenuItem.Tag = "KeyLPattern";
+            lineAndPatternRecognizerToolStripMenuItem.Tag = "All";
+            _keyZoneRecognizerCommands = new KeyZoneRecognizerCommand[] { 
+                        new KeyLineRecognizerCommand(),
+                        new KeyMarkRecognizerCommand(),
+            };
+            _selectedKeyZoneRecognizerCommands = new KeyZoneRecognizerCommand[] {
+                _keyZoneRecognizerCommands[0]
+            };
+
+
+            _recognizedFieldViewerTool = new FormFieldViewerTool();
+            _recognizedFieldViewerTool.MouseClick += new VisualToolMouseEventHandler(recognizedFieldViewerTool_MouseClick);
+            _recognizedFieldViewerTool.FieldViewMouseEnter += new EventHandler<FormFieldViewEventArgs>(recognizedFieldViewerTool_FieldViewMouseEnter);
+            _recognizedFieldViewerTool.FieldViewMouseLeave += new EventHandler<FormFieldViewEventArgs>(recognizedFieldViewerTool_FieldViewMouseLeave);
+            recognizedImageViewer.VisualTool = _recognizedFieldViewerTool;
+
+            _formRecognitionManager = new FormRecognitionManager();
+            _formRecognitionManager.TemplateMatching.ImageImprintGenerator = CreateImageImprintGenerator(null);
+
+            _binarizeCommand = new ChangePixelFormatToBlackWhiteCommand(BinarizationMode.Global);
+            _renderingSettings = new RenderingSettings(300, 300);
+
 
 #if !REMOVE_BARCODE_SDK
             _defaultBarcodeReaderSettings = new ReaderSettings();
@@ -316,6 +326,8 @@ namespace FormsProcessingDemo
                         @"Release\net6.0-windows\TesseractOCR\",
                         @"Debug\net7.0-windows\TesseractOCR\",
                         @"Release\net7.0-windows\TesseractOCR\",
+                        @"Debug\net8.0-windows\TesseractOCR\",
+                        @"Release\net8.0-windows\TesseractOCR\",
                     };
 
                     // search tesseract dll
@@ -722,10 +734,11 @@ namespace FormsProcessingDemo
             lineRecognizerToolStripMenuItem.Checked = false;
             patternRecognizerToolStripMenuItem.Checked = false;
             lineAndPatternRecognizerToolStripMenuItem.Checked = false;
-
+            
             string recognizer = (string)((ToolStripMenuItem)sender).Tag;
             _enabledKeyLineRecognizer = false ;
             _enabledKeyLPatternRecognizer = false;
+            _enabledKeyWordsRecognizer = false;
 
             // if recognizer, which is based on lines, must be chosen
             if (recognizer == "KeyLine")
@@ -750,6 +763,14 @@ namespace FormsProcessingDemo
                 _enabledKeyLPatternRecognizer = true;
                 _selectedKeyZoneRecognizerCommands = _keyZoneRecognizerCommands;
             }
+            // if recognizers, which is based on lines and L-patterns, must be chosen
+            else if (recognizer == "KeyWords")
+            {
+                _enabledKeyWordsRecognizer = true;
+                _selectedKeyZoneRecognizerCommands = new KeyZoneRecognizerCommand[]{
+                    _keyZoneRecognizerCommands[2]
+                };
+            }
             else
             {
                 throw new NotImplementedException();
@@ -765,7 +786,7 @@ namespace FormsProcessingDemo
             else
             {
                 lineRecognizerToolStripMenuItem.Checked = _enabledKeyLineRecognizer;
-                patternRecognizerToolStripMenuItem.Checked = _enabledKeyLPatternRecognizer;
+                patternRecognizerToolStripMenuItem.Checked = _enabledKeyLPatternRecognizer;                
             }
         }
 
@@ -1685,13 +1706,15 @@ namespace FormsProcessingDemo
                     new ErodeCommand(),
             };
 #else
-            ProcessingCommandBase[] availableProcessingCommands = new ProcessingCommandBase[] {
+            ProcessingCommandBase[] availableProcessingCommands;
+
+            availableProcessingCommands = new ProcessingCommandBase[] {
                     new DespeckleCommand(),
                     new HalftoneRemovalCommand(),
                     new DilateCommand(),
                     new ErodeCommand(),
                     new BorderClearCommand()
-            };
+                };
 #endif
 
             using (ImageProcessingForm form = new ImageProcessingForm(
