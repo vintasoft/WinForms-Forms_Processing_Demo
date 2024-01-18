@@ -54,6 +54,7 @@ namespace DemosCommonCode.Imaging
             // 
             // moveDownButton
             // 
+            this.moveDownButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.moveDownButton.Location = new System.Drawing.Point(119, 213);
             this.moveDownButton.Name = "moveDownButton";
             this.moveDownButton.Size = new System.Drawing.Size(99, 23);
@@ -64,6 +65,7 @@ namespace DemosCommonCode.Imaging
             // 
             // moveUpButton
             // 
+            this.moveUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.moveUpButton.Location = new System.Drawing.Point(119, 184);
             this.moveUpButton.Name = "moveUpButton";
             this.moveUpButton.Size = new System.Drawing.Size(99, 23);
@@ -74,6 +76,7 @@ namespace DemosCommonCode.Imaging
             // 
             // removeAllLanguagesFromListButton
             // 
+            this.removeAllLanguagesFromListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.removeAllLanguagesFromListButton.Location = new System.Drawing.Point(3, 213);
             this.removeAllLanguagesFromListButton.Name = "removeAllLanguagesFromListButton";
             this.removeAllLanguagesFromListButton.Size = new System.Drawing.Size(110, 23);
@@ -84,6 +87,7 @@ namespace DemosCommonCode.Imaging
             // 
             // removeLanguageFromListButton
             // 
+            this.removeLanguageFromListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.removeLanguageFromListButton.Location = new System.Drawing.Point(3, 184);
             this.removeLanguageFromListButton.Name = "removeLanguageFromListButton";
             this.removeLanguageFromListButton.Size = new System.Drawing.Size(110, 23);
@@ -103,7 +107,8 @@ namespace DemosCommonCode.Imaging
             // 
             // selectedLanguagesListBox
             // 
-            this.selectedLanguagesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.selectedLanguagesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.selectedLanguagesListBox.FormattingEnabled = true;
             this.selectedLanguagesListBox.Location = new System.Drawing.Point(3, 18);
