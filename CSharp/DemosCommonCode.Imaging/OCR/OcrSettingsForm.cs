@@ -329,7 +329,7 @@ namespace DemosCommonCode.Imaging
         #region Methods
 
         /// <summary>
-        /// Handles the Click event of ButtonOK object.
+        /// Handles the Click event of buttonOK object.
         /// </summary>
         private void buttonOK_Click(object sender, EventArgs e)
         {
@@ -365,7 +365,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of SelectLanguagesButton object.
+        /// Handles the Click event of selectLanguagesButton object.
         /// </summary>
         private void selectLanguagesButton_Click(object sender, EventArgs e)
         {
@@ -382,7 +382,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the ValueChanged event of MaxThreadsNumericUpDown object.
+        /// Handles the ValueChanged event of maxThreadsNumericUpDown object.
         /// </summary>
         private void maxThreadsNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -393,7 +393,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the ValueChanged event of MaxThreadsTrackBar object.
+        /// Handles the ValueChanged event of maxThreadsTrackBar object.
         /// </summary>
         private void maxThreadsTrackBar_ValueChanged(object sender, EventArgs e)
         {
@@ -404,7 +404,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of ResetMaxThreadsButton object.
+        /// Handles the Click event of resetMaxThreadsButton object.
         /// </summary>
         private void resetMaxThreadsButton_Click(object sender, EventArgs e)
         {
@@ -413,7 +413,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the CheckedChanged event of UseMultithreadingCheckBox object.
+        /// Handles the CheckedChanged event of useMultithreadingCheckBox object.
         /// </summary>
         private void useMultithreadingCheckBox_CheckedChanged(object sender, EventArgs e)
         {

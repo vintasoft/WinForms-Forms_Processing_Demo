@@ -662,7 +662,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Handles the Click event of RotateClockwiseToolStripMenuItem object.
+        /// Handles the Click event of rotateClockwiseToolStripMenuItem object.
         /// </summary>
         private void rotateClockwiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -670,7 +670,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Handles the Click event of CounterclockwiseToolStripMenuItem object.
+        /// Handles the Click event of counterclockwiseToolStripMenuItem object.
         /// </summary>
         private void counterclockwiseToolStripMenuItem_Click(object sender, EventArgs e)
         {

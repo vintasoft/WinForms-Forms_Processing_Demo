@@ -61,7 +61,7 @@ namespace DemosCommonCode.Imaging
         #region Methods
 
         /// <summary>
-        /// Handles the Click event of ButtonOK object.
+        /// Handles the Click event of buttonOK object.
         /// </summary>
         private void buttonOK_Click(object sender, EventArgs e)
         {
@@ -81,7 +81,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of AddLanguage object.
+        /// Handles the Click event of addLanguage object.
         /// </summary>
         private void addLanguage_Click(object sender, EventArgs e)
         {
@@ -94,7 +94,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the MouseDoubleClick event of SupportedLanguagesListBox object.
+        /// Handles the MouseDoubleClick event of supportedLanguagesListBox object.
         /// </summary>
         private void supportedLanguagesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -102,7 +102,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of DownloadAdditionalLanguageDictionariesButton object.
+        /// Handles the Click event of downloadAdditionalLanguageDictionariesButton object.
         /// </summary>
         private void downloadAdditionalLanguageDictionariesButton_Click(object sender, EventArgs e)
         {

@@ -104,7 +104,7 @@ namespace DemosCommonCode
         #region Methods
 
         /// <summary>
-        /// Handles the SelectedIndexChanged event of CommandTypeComboBox object.
+        /// Handles the SelectedIndexChanged event of commandTypeComboBox object.
         /// </summary>
         private void commandTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -113,7 +113,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the SelectedIndexChanged event of CommandListBox object.
+        /// Handles the SelectedIndexChanged event of commandListBox object.
         /// </summary>
         private void commandListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,7 +123,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the MouseDoubleClick event of CommandListBox object.
+        /// Handles the MouseDoubleClick event of commandListBox object.
         /// </summary>
         private void commandListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {

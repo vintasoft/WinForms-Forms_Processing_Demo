@@ -158,7 +158,7 @@ namespace DemosCommonCode
         #region UI
 
         /// <summary>
-        /// Handles the ProcessingCommandsChanged event of ImageProcessingCommandsEditor1 object.
+        /// Handles the ProcessingCommandsChanged event of imageProcessingCommandsEditor1 object.
         /// </summary>
         private void imageProcessingCommandsEditor1_ProcessingCommandsChanged(object sender, EventArgs e)
         {
@@ -170,7 +170,7 @@ namespace DemosCommonCode
         #region Execute Processing Commands
 
         /// <summary>
-        /// Handles the Click event of ExecuteCommandOnImageButton object.
+        /// Handles the Click event of executeCommandOnImageButton object.
         /// </summary>
         private void executeCommandOnImageButton_Click(object sender, EventArgs e)
         {
@@ -367,7 +367,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the Progress event of ExecutingCommand object.
+        /// Handles the Progress event of executingCommand object.
         /// </summary>
         private void executingCommand_Progress(object sender, ImageProcessingProgressEventArgs e)
         {
@@ -382,7 +382,7 @@ namespace DemosCommonCode
         #region Image Viewers
 
         /// <summary>
-        /// Handles the FocusedIndexChanged event of SourceImageViewer object.
+        /// Handles the FocusedIndexChanged event of sourceImageViewer object.
         /// </summary>
         private void sourceImageViewer_FocusedIndexChanged(object sender, FocusedIndexChangedEventArgs e)
         {
@@ -391,7 +391,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the ZoomChanged event of SourceImageViewer object.
+        /// Handles the ZoomChanged event of sourceImageViewer object.
         /// </summary>
         private void sourceImageViewer_ZoomChanged(object sender, ZoomChangedEventArgs e)
         {
@@ -400,7 +400,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the ZoomChanged event of ProcessedImageViewer object.
+        /// Handles the ZoomChanged event of processedImageViewer object.
         /// </summary>
         private void processedImageViewer_ZoomChanged(object sender, ZoomChangedEventArgs e)
         {
@@ -409,7 +409,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the ScrollChanged event of SourceImageViewer object.
+        /// Handles the ScrollChanged event of sourceImageViewer object.
         /// </summary>
         private void sourceImageViewer_ScrollChanged(object sender, PropertyChangedEventArgs<Point> e)
         {
@@ -418,7 +418,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the ScrollChanged event of ProcessedImageViewer object.
+        /// Handles the ScrollChanged event of processedImageViewer object.
         /// </summary>
         private void processedImageViewer_ScrollChanged(object sender, PropertyChangedEventArgs<Point> e)
         {

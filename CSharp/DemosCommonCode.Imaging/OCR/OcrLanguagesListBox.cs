@@ -102,7 +102,7 @@ namespace DemosCommonCode.Imaging
         #region PRIVATE
 
         /// <summary>
-        /// Handles the Click event of RemoveLanguageFromList object.
+        /// Handles the Click event of removeLanguageFromList object.
         /// </summary>
         private void removeLanguageFromList_Click(object sender, EventArgs e)
         {
@@ -116,7 +116,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of RemoveAllLanguagesFromList object.
+        /// Handles the Click event of removeAllLanguagesFromList object.
         /// </summary>
         private void removeAllLanguagesFromList_Click(object sender, EventArgs e)
         {
@@ -130,7 +130,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of MoveUpButton object.
+        /// Handles the Click event of moveUpButton object.
         /// </summary>
         private void moveUpButton_Click(object sender, EventArgs e)
         {
@@ -146,7 +146,7 @@ namespace DemosCommonCode.Imaging
         }
 
         /// <summary>
-        /// Handles the Click event of MoveDownButton object.
+        /// Handles the Click event of moveDownButton object.
         /// </summary>
         private void moveDownButton_Click(object sender, EventArgs e)
         {

@@ -134,7 +134,7 @@ namespace DemosCommonCode
         #region PRIVATE
 
         /// <summary>
-        /// Handles the CheckedChanged event of EnableImageProcessingCheckBox object.
+        /// Handles the CheckedChanged event of enableImageProcessingCheckBox object.
         /// </summary>
         private void enableImageProcessingCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -148,7 +148,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the ProcessingCommandsChanged event of ImageProcessingCommandsEditor1 object.
+        /// Handles the ProcessingCommandsChanged event of imageProcessingCommandsEditor1 object.
         /// </summary>
         private void imageProcessingCommandsEditor1_ProcessingCommandsChanged(
             object sender,

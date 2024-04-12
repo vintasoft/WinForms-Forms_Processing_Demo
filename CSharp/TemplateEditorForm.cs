@@ -1040,7 +1040,7 @@ namespace FormsProcessingDemo
         #region Image viewer
 
         /// <summary>
-        /// Handles the KeyDown event of ImageViewer1 object.
+        /// Handles the KeyDown event of imageViewer1 object.
         /// </summary>
         private void imageViewer1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1949,6 +1949,9 @@ namespace FormsProcessingDemo
             }
         }
 
+        /// <summary>
+        /// Handles the PropertyValueChanged event of propertyGrid1 object.
+        /// </summary>
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
             if (e.ChangedItem.Label != "Name" && e.ChangedItem.Label != "DocumentName")
@@ -1986,7 +1989,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Handles the MouseDoubleClick event of TemplatesTreeView object.
+        /// Handles the MouseDoubleClick event of templatesTreeView object.
         /// </summary>
         void templatesTreeView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -1998,7 +2001,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Handles the AfterLabelEdit event of TemplatesTreeView object.
+        /// Handles the AfterLabelEdit event of templatesTreeView object.
         /// </summary>
         private void templatesTreeView_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {

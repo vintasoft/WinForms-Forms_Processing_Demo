@@ -96,7 +96,7 @@ namespace DemosCommonCode
         #region UI
 
         /// <summary>
-        /// Handles the SelectedProcessingCommandChanged event of ImageProcessingCommandsViewer1 object.
+        /// Handles the SelectedProcessingCommandChanged event of imageProcessingCommandsViewer1 object.
         /// </summary>
         private void imageProcessingCommandsViewer1_SelectedProcessingCommandChanged(
             object sender,
@@ -107,7 +107,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the MouseDoubleClickOnSelectedProcessingCommand event of ImageProcessingCommandsViewer1 object.
+        /// Handles the MouseDoubleClickOnSelectedProcessingCommand event of imageProcessingCommandsViewer1 object.
         /// </summary>
         private void imageProcessingCommandsViewer1_MouseDoubleClickOnSelectedProcessingCommand(
             object sender,
@@ -120,7 +120,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the Click event of AddCommandToListButton object.
+        /// Handles the Click event of addCommandToListButton object.
         /// </summary>
         private void addCommandToListButton_Click(object sender, EventArgs e)
         {
@@ -130,7 +130,7 @@ namespace DemosCommonCode
 
 
         /// <summary>
-        /// Handles the Click event of RemoveCommandFromListButton object.
+        /// Handles the Click event of removeCommandFromListButton object.
         /// </summary>
         private void removeCommandFromListButton_Click(object sender, EventArgs e)
         {
@@ -150,7 +150,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the Click event of RemoveAllCommandsFromList object.
+        /// Handles the Click event of removeAllCommandsFromList object.
         /// </summary>
         private void removeAllCommandsFromList_Click(object sender, EventArgs e)
         {
@@ -162,7 +162,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the Click event of MoveUpButton object.
+        /// Handles the Click event of moveUpButton object.
         /// </summary>
         private void moveUpButton_Click(object sender, EventArgs e)
         {
@@ -174,7 +174,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the Click event of MoveDownButton object.
+        /// Handles the Click event of moveDownButton object.
         /// </summary>
         private void moveDownButton_Click(object sender, EventArgs e)
         {
@@ -187,7 +187,7 @@ namespace DemosCommonCode
 
 
         /// <summary>
-        /// Handles the DoubleClick event of CommandsToProcessListBox object.
+        /// Handles the DoubleClick event of commandsToProcessListBox object.
         /// </summary>
         private void commandsToProcessListBox_DoubleClick(object sender, EventArgs e)
         {
@@ -197,7 +197,7 @@ namespace DemosCommonCode
         }
 
         /// <summary>
-        /// Handles the Click event of SetCommandPropertiesButton object.
+        /// Handles the Click event of setCommandPropertiesButton object.
         /// </summary>
         private void setCommandPropertiesButton_Click(object sender, EventArgs e)
         {
@@ -207,7 +207,7 @@ namespace DemosCommonCode
 
 
         /// <summary>
-        /// Handles the SelectedIndexChanged event of CommandsToProcessListBox object.
+        /// Handles the SelectedIndexChanged event of commandsToProcessListBox object.
         /// </summary>
         private void commandsToProcessListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
