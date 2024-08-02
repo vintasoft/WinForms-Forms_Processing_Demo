@@ -22,6 +22,9 @@ using Vintasoft.Imaging.ImageProcessing;
 #if !REMOVE_OCR_PLUGIN
 using Vintasoft.Imaging.Ocr;
 using Vintasoft.Imaging.Ocr.Tesseract;
+#if !REMOVE_OCR_ML_ASSEMBLY
+using Vintasoft.Imaging.Ocr.ML.HandwrittenDigits;
+#endif
 #endif
 using Vintasoft.Imaging.UI;
 using Vintasoft.Imaging.UI.VisualTools;
@@ -218,9 +221,11 @@ namespace FormsProcessingDemo
                 FormDocumentTemplatesFilter);
             DemosTools.SetTestFilesFolder(_openImageOrDocumentDialog);
 
+
 #if REMOVE_OCR_PLUGIN
             ocrToolStripMenuItem.Enabled = false;
             ocrToolStripButton.Enabled = false;
+            handwritingDigitsToolStripButton.Enabled = false;
             addOCRFieldToolStripMenuItem.Enabled = false;
             defaultOcrSettingsToolStripMenuItem.Enabled = false;
 #endif
@@ -251,6 +256,7 @@ namespace FormsProcessingDemo
             }
         }
 
+
         OcrRecognitionRegionSplittingSettings _defaultOcrRecognitionRegionSplittingSettings;
         /// <summary>
         /// Gets or sets the default OCR recognition region splitting settings.
@@ -266,6 +272,24 @@ namespace FormsProcessingDemo
                 _defaultOcrRecognitionRegionSplittingSettings = value;
             }
         }
+
+#if !REMOVE_OCR_ML_ASSEMBLY
+        HandwrittenDigitsOcrSettings _defaultHandwritingDigitsOcrSettings;
+        /// <summary>
+        /// Gets or sets the default handwiting digits OCR engine settings for newly created OCR fields.
+        /// </summary>
+        public HandwrittenDigitsOcrSettings DefaultHandwritingDigitsOcrSettings
+        {
+            get
+            {
+                return _defaultHandwritingDigitsOcrSettings;
+            }
+            set
+            {
+                _defaultHandwritingDigitsOcrSettings = value;
+            }
+        }
+#endif
 #endif
 
 #if !REMOVE_BARCODE_SDK
@@ -306,7 +330,7 @@ namespace FormsProcessingDemo
         {
             get
             {
-                return OcrFieldTemplate.OcrEngineManager != null;
+                return OcrFieldTemplate.OcrEngineManager != null && OcrFieldTemplate.OcrEngineManager.IsEngineTypeSupported(OcrEngineType.Text);
             }
         }
 #endif
@@ -414,6 +438,7 @@ namespace FormsProcessingDemo
             tableOfOmrEllipsesToolStripButton.Enabled = isImageLoaded;
 #if !REMOVE_OCR_PLUGIN
             ocrToolStripButton.Enabled = isImageLoaded && isOcrEngineAvailable;
+            handwritingDigitsToolStripButton.Enabled = isImageLoaded;
 #endif
             barcodeToolStripButton.Enabled = isImageLoaded;
         }
@@ -875,6 +900,17 @@ namespace FormsProcessingDemo
         #region 'OCR' menu
 
         /// <summary>
+        /// Adds an handwiting digits OCR field template to an image and starts building of it.
+        /// </summary>
+        private void handwritingDigitsToolStripButton_Click(object sender, EventArgs e)
+        {
+#if !REMOVE_OCR_PLUGIN && !REMOVE_OCR_ML_ASSEMBLY
+            AddFormFieldTemplate(new OcrFieldTemplate((OcrEngineSettings)_defaultHandwritingDigitsOcrSettings.Clone(),
+                 (OcrRecognitionRegionSplittingSettings)_defaultOcrRecognitionRegionSplittingSettings.Clone()));
+#endif
+        }
+
+        /// <summary>
         /// Adds an OCR field template to an image and starts building of it.
         /// </summary>
         private void ocrToolStripButton_Click(object sender, EventArgs e)
@@ -933,18 +969,36 @@ namespace FormsProcessingDemo
             if (_recognizeTextInMultipleThreads != useMultithreading ||
                 _maxOcrThreads != maxOcrThreads)
             {
-                TesseractOcr ocrEngine = new TesseractOcr(tesseractOcrDllDirectory);
-                TesseractOcr[] additionalOcrEngines = null;
 
-                if (useMultithreading && maxOcrThreads > 1)
+                List<OcrEngine> additionalOcrEngines = new List<OcrEngine>();
+                TesseractOcr ocrEngine = null;
+                try
                 {
-                    additionalOcrEngines = new TesseractOcr[maxOcrThreads - 1];
-
-                    for (int i = 0; i < additionalOcrEngines.Length; i++)
-                        additionalOcrEngines[i] = new TesseractOcr(tesseractOcrDllDirectory);
+                    ocrEngine = new TesseractOcr(tesseractOcrDllDirectory);
+                    if (useMultithreading && maxOcrThreads > 1)
+                    {
+                        for (int i = 0; i < maxOcrThreads - 1; i++)
+                            additionalOcrEngines.Add(new TesseractOcr(tesseractOcrDllDirectory));
+                    }
+                }
+                catch
+                {
                 }
 
-                manager = new OcrEngineManager(ocrEngine, additionalOcrEngines);
+                if (ocrEngine != null)
+                {
+#if !REMOVE_OCR_ML_ASSEMBLY
+                    additionalOcrEngines.Add(new HandwrittenDigitsOcrEngine());
+#endif
+                    manager = new OcrEngineManager(ocrEngine, additionalOcrEngines.ToArray());
+                }
+                else
+                {
+#if !REMOVE_OCR_ML_ASSEMBLY
+                    manager = new OcrEngineManager(new HandwrittenDigitsOcrEngine());
+#endif
+                }
+
                 manager.RecognitionRegionSplittingSettings = _defaultOcrRecognitionRegionSplittingSettings;
 
                 _recognizeTextInMultipleThreads = useMultithreading;
@@ -955,15 +1009,15 @@ namespace FormsProcessingDemo
         }
 #endif
 
-        #endregion
+#endregion
 
 
-        #region 'OMR' menu
+                    #region 'OMR' menu
 
-        /// <summary>
-        /// Adds an OMR rectangular field template to an image and starts building of it.
-        /// </summary>
-        private void omrRectangleToolStripButton_Click(object sender, EventArgs e)
+                    /// <summary>
+                    /// Adds an OMR rectangular field template to an image and starts building of it.
+                    /// </summary>
+                    private void omrRectangleToolStripButton_Click(object sender, EventArgs e)
         {
             AddFormFieldTemplate(new OmrRectangularFieldTemplate());
         }
@@ -1466,7 +1520,7 @@ namespace FormsProcessingDemo
                 List<FormFieldTemplate> ocrFieldTemplates = new List<FormFieldTemplate>();
                 foreach (FormFieldTemplate item in templateGroup.Items)
                 {
-                    if (item is OcrFieldTemplate)
+                    if (item is OcrFieldTemplate && ((OcrFieldTemplate)item).OcrEngineSettings.EngineType == OcrEngineType.Text)
                         ocrFieldTemplates.Add(item);
                     else if (ContainsOcrFields(item))
                         RemoveAllOcrFields(item);

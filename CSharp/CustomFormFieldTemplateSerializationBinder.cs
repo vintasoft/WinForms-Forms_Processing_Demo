@@ -1,5 +1,7 @@
 ﻿using System;
 
+using DemosCommonCode;
+
 using Vintasoft.Imaging.FormsProcessing.FormRecognition.Formatters;
 
 namespace FormsProcessingDemo
@@ -40,8 +42,9 @@ namespace FormsProcessingDemo
             {
                 return base.BindToType(assemblyName, typeName);
             }
-            catch
+            catch (Exception ex) 
             {
+                DemosTools.ShowErrorMessage(ex);
                 return null;
             }
         }

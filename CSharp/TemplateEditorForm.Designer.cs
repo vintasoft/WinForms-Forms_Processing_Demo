@@ -28,12 +28,15 @@ namespace FormsProcessingDemo
         /// </summary>
         private void InitializeComponent()
         {
+            Vintasoft.Imaging.Utils.WinFormsSystemClipboard winFormsSystemClipboard1 = new Vintasoft.Imaging.Utils.WinFormsSystemClipboard();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance1 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance2 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance3 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance4 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance5 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Untitled");
+            Vintasoft.Imaging.UI.ThumbnailCaption thumbnailCaption1 = new Vintasoft.Imaging.UI.ThumbnailCaption();
+            Vintasoft.Imaging.Codecs.Decoders.RenderingSettings renderingSettings3 = new Vintasoft.Imaging.Codecs.Decoders.RenderingSettings();
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Untitled");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateEditorForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +103,7 @@ namespace FormsProcessingDemo
             this.tableOfOmrRectanglesToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tableOfOmrEllipsesToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ocrToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.handwritingDigitsToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.barcodeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -152,64 +156,64 @@ namespace FormsProcessingDemo
             // openDocumentToolStripMenuItem
             // 
             this.openDocumentToolStripMenuItem.Name = "openDocumentToolStripMenuItem";
-            this.openDocumentToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.openDocumentToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.openDocumentToolStripMenuItem.Text = "Open Form Document Template...";
             this.openDocumentToolStripMenuItem.Click += new System.EventHandler(this.openDocumentToolStripMenuItem_Click);
             // 
             // addDocumentToolStripMenuItem
             // 
             this.addDocumentToolStripMenuItem.Name = "addDocumentToolStripMenuItem";
-            this.addDocumentToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.addDocumentToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.addDocumentToolStripMenuItem.Text = "Add Form Document Template...";
             this.addDocumentToolStripMenuItem.Click += new System.EventHandler(this.addDocumentToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(263, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(261, 6);
             // 
             // openTemplateImageToolStripMenuItem
             // 
             this.openTemplateImageToolStripMenuItem.Name = "openTemplateImageToolStripMenuItem";
-            this.openTemplateImageToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.openTemplateImageToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.openTemplateImageToolStripMenuItem.Text = "Open Template Image...";
             this.openTemplateImageToolStripMenuItem.Click += new System.EventHandler(this.openTemplateImageToolStripMenuItem_Click);
             // 
             // addTemplateImageToolStripMenuItem
             // 
             this.addTemplateImageToolStripMenuItem.Name = "addTemplateImageToolStripMenuItem";
-            this.addTemplateImageToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.addTemplateImageToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.addTemplateImageToolStripMenuItem.Text = "Add Template Image...";
             this.addTemplateImageToolStripMenuItem.Click += new System.EventHandler(this.addTemplateImageToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(263, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(261, 6);
             // 
             // saveDocumentAsToolStripMenuItem
             // 
             this.saveDocumentAsToolStripMenuItem.Name = "saveDocumentAsToolStripMenuItem";
-            this.saveDocumentAsToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.saveDocumentAsToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.saveDocumentAsToolStripMenuItem.Text = "Save Form Document Template As...";
             this.saveDocumentAsToolStripMenuItem.Click += new System.EventHandler(this.saveDocumentAsToolStripMenuItem_Click);
             // 
             // closeDocumentToolStripMenuItem
             // 
             this.closeDocumentToolStripMenuItem.Name = "closeDocumentToolStripMenuItem";
-            this.closeDocumentToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.closeDocumentToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.closeDocumentToolStripMenuItem.Text = "Close Form Document Template";
             this.closeDocumentToolStripMenuItem.Click += new System.EventHandler(this.closeDocumentToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(263, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(261, 6);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -225,14 +229,14 @@ namespace FormsProcessingDemo
             // loadPageFieldTemplatesToolStripMenuItem
             // 
             this.loadPageFieldTemplatesToolStripMenuItem.Name = "loadPageFieldTemplatesToolStripMenuItem";
-            this.loadPageFieldTemplatesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.loadPageFieldTemplatesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.loadPageFieldTemplatesToolStripMenuItem.Text = "Load Field Templates...";
             this.loadPageFieldTemplatesToolStripMenuItem.Click += new System.EventHandler(this.loadPageFieldTemplatesToolStripMenuItem_Click);
             // 
             // savePageFieldTemplatesToolStripMenuItem
             // 
             this.savePageFieldTemplatesToolStripMenuItem.Name = "savePageFieldTemplatesToolStripMenuItem";
-            this.savePageFieldTemplatesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.savePageFieldTemplatesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.savePageFieldTemplatesToolStripMenuItem.Text = "Save Field Templates...";
             this.savePageFieldTemplatesToolStripMenuItem.Click += new System.EventHandler(this.savePageFieldTemplatesToolStripMenuItem_Click);
             // 
@@ -265,7 +269,7 @@ namespace FormsProcessingDemo
             this.groupToolStripMenuItem,
             this.ungroupToolStripMenuItem});
             this.fieldTemplatesToolStripMenuItem.Name = "fieldTemplatesToolStripMenuItem";
-            this.fieldTemplatesToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.fieldTemplatesToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.fieldTemplatesToolStripMenuItem.Text = "Field Templates";
             // 
             // templateImageBackgroundCompensatToolStripMenuItem
@@ -278,7 +282,7 @@ namespace FormsProcessingDemo
             this.ignoreForAllPagesToolStripMenuItem,
             this.ignoreForCurrentPageToolStripMenuItem});
             this.templateImageBackgroundCompensatToolStripMenuItem.Name = "templateImageBackgroundCompensatToolStripMenuItem";
-            this.templateImageBackgroundCompensatToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.templateImageBackgroundCompensatToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.templateImageBackgroundCompensatToolStripMenuItem.Text = "Template Image Background Compensation";
             // 
             // automaticallyCompensateForAllPagesToolStripMenuItem
@@ -331,13 +335,13 @@ namespace FormsProcessingDemo
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(305, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(303, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Delete)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -345,7 +349,7 @@ namespace FormsProcessingDemo
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -353,7 +357,7 @@ namespace FormsProcessingDemo
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Insert)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -361,7 +365,7 @@ namespace FormsProcessingDemo
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.ShortcutKeyDisplayString = "Del";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -369,26 +373,26 @@ namespace FormsProcessingDemo
             // 
             this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
             this.deleteAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Delete)));
-            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.deleteAllToolStripMenuItem.Text = "Delete All";
             this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(305, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(303, 6);
             // 
             // groupToolStripMenuItem
             // 
             this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
-            this.groupToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.groupToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.groupToolStripMenuItem.Text = "Group...";
             this.groupToolStripMenuItem.Click += new System.EventHandler(this.groupToolStripMenuItem_Click);
             // 
             // ungroupToolStripMenuItem
             // 
             this.ungroupToolStripMenuItem.Name = "ungroupToolStripMenuItem";
-            this.ungroupToolStripMenuItem.Size = new System.Drawing.Size(308, 22);
+            this.ungroupToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.ungroupToolStripMenuItem.Text = "Ungroup...";
             this.ungroupToolStripMenuItem.Click += new System.EventHandler(this.ungroupToolStripMenuItem_Click);
             // 
@@ -406,28 +410,28 @@ namespace FormsProcessingDemo
             // addOmrRectangleToolStripMenuItem
             // 
             this.addOmrRectangleToolStripMenuItem.Name = "addOmrRectangleToolStripMenuItem";
-            this.addOmrRectangleToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.addOmrRectangleToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.addOmrRectangleToolStripMenuItem.Text = "Add OMR Rectangle";
             this.addOmrRectangleToolStripMenuItem.Click += new System.EventHandler(this.omrRectangleToolStripButton_Click);
             // 
             // addOmrEllipseToolStripMenuItem
             // 
             this.addOmrEllipseToolStripMenuItem.Name = "addOmrEllipseToolStripMenuItem";
-            this.addOmrEllipseToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.addOmrEllipseToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.addOmrEllipseToolStripMenuItem.Text = "Add OMR Ellipse";
             this.addOmrEllipseToolStripMenuItem.Click += new System.EventHandler(this.omrEllipseToolStripButton_Click);
             // 
             // addTableOfOmrRectanglesToolStripMenuItem
             // 
             this.addTableOfOmrRectanglesToolStripMenuItem.Name = "addTableOfOmrRectanglesToolStripMenuItem";
-            this.addTableOfOmrRectanglesToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.addTableOfOmrRectanglesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.addTableOfOmrRectanglesToolStripMenuItem.Text = "Add Table of OMR Rectangles";
             this.addTableOfOmrRectanglesToolStripMenuItem.Click += new System.EventHandler(this.tableOfOmrRectanglesToolStripButton_Click);
             // 
             // addTableOfOmrEllipsesToolStripMenuItem
             // 
             this.addTableOfOmrEllipsesToolStripMenuItem.Name = "addTableOfOmrEllipsesToolStripMenuItem";
-            this.addTableOfOmrEllipsesToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.addTableOfOmrEllipsesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.addTableOfOmrEllipsesToolStripMenuItem.Text = "Add Table of OMR Ellipses";
             this.addTableOfOmrEllipsesToolStripMenuItem.Click += new System.EventHandler(this.tableOfOmrEllipsesToolStripButton_Click);
             // 
@@ -495,9 +499,9 @@ namespace FormsProcessingDemo
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(0, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -515,10 +519,15 @@ namespace FormsProcessingDemo
             // thumbnailViewer1
             // 
             this.thumbnailViewer1.AllowDrop = true;
-            this.thumbnailViewer1.AutoScroll = true;
             this.thumbnailViewer1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.thumbnailViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.thumbnailViewer1.Clipboard = winFormsSystemClipboard1;
             this.thumbnailViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thumbnailViewer1.FastScrollingCursor = System.Windows.Forms.Cursors.SizeAll;
+            this.thumbnailViewer1.FastScrollingInterval = 10;
+            this.thumbnailViewer1.FastScrollingMinDistance = 5F;
+            this.thumbnailViewer1.FastScrollingMouseButton = System.Windows.Forms.MouseButtons.Middle;
+            this.thumbnailViewer1.FastScrollingScale = 0.5F;
             thumbnailAppearance1.BackColor = System.Drawing.Color.Transparent;
             thumbnailAppearance1.BorderColor = System.Drawing.Color.Gray;
             thumbnailAppearance1.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Dotted;
@@ -529,6 +538,7 @@ namespace FormsProcessingDemo
             thumbnailAppearance2.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             thumbnailAppearance2.BorderWidth = 2;
             this.thumbnailViewer1.HoveredThumbnailAppearance = thumbnailAppearance2;
+            this.thumbnailViewer1.ImageRotationAngle = 0;
             this.thumbnailViewer1.Location = new System.Drawing.Point(0, 0);
             this.thumbnailViewer1.MasterViewer = this.imageViewer1;
             this.thumbnailViewer1.Name = "thumbnailViewer1";
@@ -550,15 +560,25 @@ namespace FormsProcessingDemo
             thumbnailAppearance5.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             thumbnailAppearance5.BorderWidth = 1;
             this.thumbnailViewer1.ThumbnailAppearance = thumbnailAppearance5;
+            thumbnailCaption1.TextColor = System.Drawing.Color.Black;
+            this.thumbnailViewer1.ThumbnailCaption = thumbnailCaption1;
             this.thumbnailViewer1.ThumbnailFlowStyle = Vintasoft.Imaging.UI.ThumbnailFlowStyle.WrappedRows;
             this.thumbnailViewer1.ThumbnailMargin = new System.Windows.Forms.Padding(3);
+            this.thumbnailViewer1.ThumbnailRenderingSettings = null;
             this.thumbnailViewer1.ThumbnailSize = new System.Drawing.Size(100, 100);
             // 
             // imageViewer1
             // 
-            this.imageViewer1.AutoScroll = true;
             this.imageViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageViewer1.Clipboard = winFormsSystemClipboard1;
             this.imageViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imageViewer1.FastScrollingCursor = System.Windows.Forms.Cursors.SizeAll;
+            this.imageViewer1.FastScrollingInterval = 10;
+            this.imageViewer1.FastScrollingMinDistance = 5F;
+            this.imageViewer1.FastScrollingMouseButton = System.Windows.Forms.MouseButtons.Middle;
+            this.imageViewer1.FastScrollingScale = 0.5F;
+            this.imageViewer1.ImageRenderingSettings = renderingSettings3;
+            this.imageViewer1.ImageRotationAngle = 0;
             this.imageViewer1.Location = new System.Drawing.Point(0, 0);
             this.imageViewer1.Name = "imageViewer1";
             this.imageViewer1.ShortcutCopy = System.Windows.Forms.Shortcut.None;
@@ -574,8 +594,8 @@ namespace FormsProcessingDemo
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.statusStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.statusStrip1.AutoSize = false;
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -601,9 +621,9 @@ namespace FormsProcessingDemo
             // 
             // splitContainerRoot
             // 
-            this.splitContainerRoot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainerRoot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainerRoot.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainerRoot.Location = new System.Drawing.Point(0, 52);
             this.splitContainerRoot.Name = "splitContainerRoot";
@@ -644,19 +664,19 @@ namespace FormsProcessingDemo
             this.templatesTreeView.LabelEdit = true;
             this.templatesTreeView.Location = new System.Drawing.Point(0, 0);
             this.templatesTreeView.Name = "templatesTreeView";
-            treeNode1.Name = "rootNode";
-            treeNode1.Text = "Untitled";
+            treeNode3.Name = "rootNode";
+            treeNode3.Text = "Untitled";
             this.templatesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode3});
             this.templatesTreeView.Size = new System.Drawing.Size(200, 192);
             this.templatesTreeView.TabIndex = 0;
             this.templatesTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imageViewer1_KeyDown);
             // 
             // propertyGridGroupBox
             // 
-            this.propertyGridGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.propertyGridGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.propertyGridGroupBox.Controls.Add(this.propertyGrid1);
             this.propertyGridGroupBox.Location = new System.Drawing.Point(4, 3);
             this.propertyGridGroupBox.Name = "propertyGridGroupBox";
@@ -667,9 +687,9 @@ namespace FormsProcessingDemo
             // 
             // propertyGrid1
             // 
-            this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.propertyGrid1.Location = new System.Drawing.Point(6, 19);
             this.propertyGrid1.Name = "propertyGrid1";
             this.propertyGrid1.Size = new System.Drawing.Size(181, 258);
@@ -680,26 +700,27 @@ namespace FormsProcessingDemo
             // 
             this.imageViewerToolStrip.AssociatedZoomTrackBar = null;
             this.imageViewerToolStrip.CanPrint = false;
+            this.imageViewerToolStrip.CaptureFromCameraButtonEnabled = true;
             this.imageViewerToolStrip.ImageViewer = this.imageViewer1;
-            this.imageViewerToolStrip.ScanButtonEnabled = true;
             this.imageViewerToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.omrRectangleToolStripButton,
             this.omrEllipseToolStripButton,
             this.tableOfOmrRectanglesToolStripButton,
             this.tableOfOmrEllipsesToolStripButton,
             this.ocrToolStripButton,
+            this.handwritingDigitsToolStripButton,
             this.barcodeToolStripButton});
             this.imageViewerToolStrip.Location = new System.Drawing.Point(0, 24);
             this.imageViewerToolStrip.Name = "imageViewerToolStrip";
             this.imageViewerToolStrip.PageCount = 0;
             this.imageViewerToolStrip.PrintButtonEnabled = true;
-            this.imageViewerToolStrip.SaveButtonEnabled = true;
+            this.imageViewerToolStrip.ScanButtonEnabled = true;
             this.imageViewerToolStrip.Size = new System.Drawing.Size(834, 25);
             this.imageViewerToolStrip.TabIndex = 0;
             this.imageViewerToolStrip.Text = "imageViewerToolStrip1";
             this.imageViewerToolStrip.UseImageViewerImages = true;
-            this.imageViewerToolStrip.SaveFile += new System.EventHandler(this.saveDocumentAsToolStripMenuItem_Click);
             this.imageViewerToolStrip.OpenFile += new System.EventHandler(this.imageViewerToolStrip_OpenFile);
+            this.imageViewerToolStrip.SaveFile += new System.EventHandler(this.saveDocumentAsToolStripMenuItem_Click);
             // 
             // omrRectangleToolStripButton
             // 
@@ -751,6 +772,17 @@ namespace FormsProcessingDemo
             this.ocrToolStripButton.Text = "OCR field";
             this.ocrToolStripButton.ToolTipText = "OCR field";
             this.ocrToolStripButton.Click += new System.EventHandler(this.ocrToolStripButton_Click);
+            // 
+            // handwritingDigitsToolStripButton
+            // 
+            this.handwritingDigitsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.handwritingDigitsToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("handwritingDigitsToolStripButton.Image")));
+            this.handwritingDigitsToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.handwritingDigitsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.handwritingDigitsToolStripButton.Name = "handwritingDigitsToolStripButton";
+            this.handwritingDigitsToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.handwritingDigitsToolStripButton.Text = "Handwriting digits OCR Field";
+            this.handwritingDigitsToolStripButton.Click += new System.EventHandler(this.handwritingDigitsToolStripButton_Click);
             // 
             // barcodeToolStripButton
             // 
@@ -863,5 +895,6 @@ namespace FormsProcessingDemo
         private System.Windows.Forms.ToolStripMenuItem ungroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem automaticallyCompensateForAllPagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton handwritingDigitsToolStripButton;
     }
 }

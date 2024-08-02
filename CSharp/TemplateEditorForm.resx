@@ -112,24 +112,24 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>355, 17</value>
   </metadata>
-  <metadata name="openImageFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openImageFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>188, 17</value>
   </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>490, 17</value>
   </metadata>
-  <metadata name="imageViewerToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="imageViewerToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="omrRectangleToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -180,6 +180,18 @@
         EcjZEL+yJoDEYF4AiUHUsPwHGQgPRJCfoab/B3kBZDqKGNBFIA0gAyByLPVgw2CBCBIkB0xYsFEPyiQP
         7Dp+mwp5gSoGgHBB84xcUNqG8UEYFM+79t/4iix29sabrv75W6D84P8AYpTEDG9oZYkAAAAASUVORK5C
         YII=
+</value>
+  </data>
+  <data name="handwritingDigitsToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFLSURBVDhPY1CyDv4PwxMWbO1SNA/W03GNhYsxMDAw6rrF
+        PVC2CQHzsxunuQPZuXB5qCKyAFjvuZtvKDMA5Gwon2Rw5vpbd1QvsP9rBeIVDGz/vID0OwaO//8ZOP5N
+        g8qtgIux/tMHCaGGAce/CLAkyBCOf2VQHAHknwbidCgNktvBwPtPGKRF3iIQagDIRJAETDP7fyWwoSAA
+        EoNqAFpgA8ZQYBeW+wDCAmkCKQI5F+R8GIAYXAZmQ+QhbCj4//8/I5QJBSBXwGwAaQDZDgNgL0HDBOoi
+        sOvtw3KRA/EdlAUNUCSvgADIRaCwAIUNEKAGIgiAXAAC8FgAhQc4XCLgXgQZAHUBIhBBAOR0mP/BmsDO
+        vQNmw2IBLQwmLNioB2WSB3Ydv02FvEAVA0C4oHlGLihtw/ggDIrnXcdufUUWO3vjTVf//C1QfvB/AMpf
+        2XRBwQ41AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="barcodeToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

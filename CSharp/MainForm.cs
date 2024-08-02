@@ -27,6 +27,9 @@ using Vintasoft.Imaging.ImageProcessing.Filters;
 #if !REMOVE_OCR_PLUGIN
 using Vintasoft.Imaging.Ocr;
 using Vintasoft.Imaging.Ocr.Tesseract;
+#if !REMOVE_OCR_ML_ASSEMBLY
+using Vintasoft.Imaging.Ocr.ML.HandwrittenDigits;
+#endif
 #endif
 using Vintasoft.Imaging.UI;
 using Vintasoft.Imaging.UI.VisualTools;
@@ -130,6 +133,13 @@ namespace FormsProcessingDemo
         /// The default OCR recognition region splitting settings.
         /// </summary>
         OcrRecognitionRegionSplittingSettings _defaultOcrRecognitionRegionSplittingSettings;
+
+#if !REMOVE_OCR_ML_ASSEMBLY
+        /// <summary>
+        /// The default handwiting digits OCR recognition region splitting settings.
+        /// </summary>
+        HandwrittenDigitsOcrSettings _defaultHandwritingDigitsOcrSettings;
+#endif
 #endif
 
 #if !REMOVE_BARCODE_SDK
@@ -182,7 +192,11 @@ namespace FormsProcessingDemo
             try
             {
                 _ocrEngine = new TesseractOcr(TesseractOcrDllDirectory);
+#if !REMOVE_OCR_ML_ASSEMBLY
+                ocrEngineManager = new OcrEngineManager(_ocrEngine, new HandwrittenDigitsOcrEngine());
+#else
                 ocrEngineManager = new OcrEngineManager(_ocrEngine);
+#endif
                 OcrFieldTemplate.OcrEngineManager = ocrEngineManager;
             }
             catch (Exception ex)
@@ -195,6 +209,10 @@ namespace FormsProcessingDemo
                 {
                     DemosTools.ShowErrorMessage(ex);
                 }
+#if !REMOVE_OCR_ML_ASSEMBLY
+                ocrEngineManager = new OcrEngineManager(new HandwrittenDigitsOcrEngine());
+#endif
+                OcrFieldTemplate.OcrEngineManager = ocrEngineManager;
             }
 
             TesseractOcrSettings tesseractSettings = new TesseractOcrSettings(OcrLanguage.English);
@@ -204,11 +222,14 @@ namespace FormsProcessingDemo
             _defaultOcrRecognitionRegionSplittingSettings =
                 (OcrRecognitionRegionSplittingSettings)OcrRecognitionRegionSplittingSettings.Default.Clone();
 
+#if !REMOVE_OCR_ML_ASSEMBLY
+            _defaultHandwritingDigitsOcrSettings = new HandwrittenDigitsOcrSettings();
+#endif
 
 #endif
 
-            // init "Template Matching" => "Image Imprint Generator" 
-            lineRecognizerToolStripMenuItem.Tag = "KeyLine";
+                // init "Template Matching" => "Image Imprint Generator" 
+                lineRecognizerToolStripMenuItem.Tag = "KeyLine";
             patternRecognizerToolStripMenuItem.Tag = "KeyLPattern";
             lineAndPatternRecognizerToolStripMenuItem.Tag = "All";
             _keyZoneRecognizerCommands = new KeyZoneRecognizerCommand[] { 
@@ -249,6 +270,9 @@ namespace FormsProcessingDemo
 #if !REMOVE_OCR_PLUGIN
             _templateEditorForm.DefaultOcrEngineSettings = _defaultOcrEngineSettings;
             _templateEditorForm.DefaultOcrRecognitionRegionSplittingSettings = _defaultOcrRecognitionRegionSplittingSettings;
+#if !REMOVE_OCR_ML_ASSEMBLY
+            _templateEditorForm.DefaultHandwritingDigitsOcrSettings = _defaultHandwritingDigitsOcrSettings;
+#endif
 #endif
 #if !REMOVE_BARCODE_SDK
             _templateEditorForm.DefaultBarcodeReaderSettings = _defaultBarcodeReaderSettings; 
@@ -1332,7 +1356,7 @@ namespace FormsProcessingDemo
                 _recognitionStopwatch.Stop();
 
             // show error message
-            DemosTools.ShowErrorMessage(e.Exception, GetImageName(e.Image));
+            DemosTools.ShowErrorMessage(GetImageName(e.Image), DemosTools.GetFullExceptionMessage(e.Exception));
             LogWriteLine(string.Format("Image recognition failed: {0}:", GetImageName(e.Image)));
             LogWriteLine();
 

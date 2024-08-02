@@ -13,6 +13,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE; DEBUG</DefineConstants>
     <DebugType>full</DebugType>
@@ -23,6 +24,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <DebugType>pdbonly</DebugType>
@@ -82,21 +84,26 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <PackageReference Include="Vintasoft.Barcode" Version="15.0.3.1" />
-    <PackageReference Include="Vintasoft.Imaging" Version="12.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.DocCleanup" Version="7.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.FormsProcessing" Version="5.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.FormsProcessing.Ocr" Version="5.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.FormsProcessing.Ocr.UI" Version="5.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.FormsProcessing.UI" Version="5.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.Jbig2Codec" Version="9.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.Jpeg2000Codec" Version="8.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.Ocr" Version="7.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.Ocr.Tesseract" Version="7.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.4.10.1" />
-    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.4.10.1" />
-    <PackageReference Include="Vintasoft.Shared" Version="4.2.0.1" />
+    <PackageReference Include="Vintasoft.Barcode" Version="15.0.4.1" />
+    <PackageReference Include="Vintasoft.Imaging" Version="12.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.DocCleanup" Version="7.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.FormsProcessing" Version="5.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.FormsProcessing.Ocr" Version="5.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.FormsProcessing.Ocr.UI" Version="5.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.FormsProcessing.UI" Version="5.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Jbig2Codec" Version="9.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Jpeg2000Codec" Version="8.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Ocr" Version="7.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Ocr.ML" Version="7.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Ocr.Tesseract" Version="7.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.5.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.5.0.1" />
+    <PackageReference Include="Vintasoft.Shared" Version="4.3.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" version="3.0.1" />
+    <PackageReference Include="Microsoft.ML.LightGbm" version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls\AnchorTypeEditorControl.cs">
@@ -396,29 +403,10 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="TemplateEditorForm.resx">
       <DependentUpon>TemplateEditorForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="TemplateEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +542,7 @@
     </Content>
     <Content Include="App.ico" />
     <Content Include="directives.txt" />
+    <EmbeddedResource Include="Resources\HandwritingOcrField.png" />
     <Content Include="Resources\ZoomIn.png" />
     <Content Include="Resources\ZoomOut.png" />
   </ItemGroup>
