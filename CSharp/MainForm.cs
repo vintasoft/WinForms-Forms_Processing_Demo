@@ -1896,18 +1896,9 @@ namespace FormsProcessingDemo
         /// </summary>
         private void RotateViewClockwise()
         {
-            if (filledImageViewer.ImageRotationAngle != 270)
-            {
-                filledImageViewer.ImageRotationAngle += 90;
-                recognizedImageViewer.ImageRotationAngle += 90;
-                sourceThumbnailViewer.ImageRotationAngle += 90;
-            }
-            else
-            {
-                filledImageViewer.ImageRotationAngle = 0;
-                recognizedImageViewer.ImageRotationAngle = 0;
-                sourceThumbnailViewer.ImageRotationAngle = 0;
-            }
+            filledImageViewer.RotateViewClockwise();
+            recognizedImageViewer.RotateViewClockwise();
+            sourceThumbnailViewer.RotateViewClockwise();
         }
 
         /// <summary>
@@ -1915,18 +1906,9 @@ namespace FormsProcessingDemo
         /// </summary>
         private void RotateViewCounterClockwise()
         {
-            if (filledImageViewer.ImageRotationAngle != 0)
-            {
-                filledImageViewer.ImageRotationAngle -= 90;
-                recognizedImageViewer.ImageRotationAngle -= 90;
-                sourceThumbnailViewer.ImageRotationAngle -= 90;
-            }
-            else
-            {
-                filledImageViewer.ImageRotationAngle = 270;
-                recognizedImageViewer.ImageRotationAngle = 270;
-                sourceThumbnailViewer.ImageRotationAngle = 270;
-            }
+            filledImageViewer.RotateViewCounterClockwise();
+            recognizedImageViewer.RotateViewCounterClockwise();
+            sourceThumbnailViewer.RotateViewCounterClockwise();
         }
 
         #endregion
