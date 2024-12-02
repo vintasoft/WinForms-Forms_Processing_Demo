@@ -60,6 +60,7 @@ namespace DemosCommonCode
         /// Default value is <b>null</b>.
         /// </value>
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Dictionary<string, ProcessingCommandBase[]> AvailableProcessingCommands
         {
             get

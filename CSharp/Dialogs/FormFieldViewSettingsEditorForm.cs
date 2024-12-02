@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -54,6 +55,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets form field view settings.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FormFieldViewSettings FormFieldSettings
         {
             get

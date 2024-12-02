@@ -37,6 +37,7 @@ using Vintasoft.Imaging.UI.VisualTools;
 using DemosCommonCode;
 using DemosCommonCode.Imaging;
 using DemosCommonCode.Imaging.Codecs;
+using System.ComponentModel;
 
 namespace FormsProcessingDemo
 {
@@ -346,12 +347,12 @@ namespace FormsProcessingDemo
                     {
                         "",
                         @"TesseractOCR\",
-                        @"Debug\net6.0-windows\TesseractOCR\",
-                        @"Release\net6.0-windows\TesseractOCR\",
                         @"Debug\net7.0-windows\TesseractOCR\",
                         @"Release\net7.0-windows\TesseractOCR\",
                         @"Debug\net8.0-windows\TesseractOCR\",
                         @"Release\net8.0-windows\TesseractOCR\",
+                        @"Debug\net9.0-windows\TesseractOCR\",
+                        @"Release\net9.0-windows\TesseractOCR\",
                     };
 
                     // search tesseract dll
@@ -374,6 +375,10 @@ namespace FormsProcessingDemo
         }
 
         bool _isRecognizeAllAsync = false;
+        /// <summary>
+        /// Gets or sets a value indicating whether now recognize asynchronous all images.
+        /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsRecognizeAllAsync
         {
             get

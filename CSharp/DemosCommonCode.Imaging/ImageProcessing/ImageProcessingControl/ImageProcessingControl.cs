@@ -59,6 +59,7 @@ namespace DemosCommonCode
         /// Default value is <b>null</b>.
         /// </value>
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Dictionary<string, ProcessingCommandBase[]> AvailableProcessingCommands
         {
             get
@@ -76,6 +77,7 @@ namespace DemosCommonCode
         /// Gets or sets the selected commands.
         /// </summary>
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ProcessingCommandBase[] SelectedCommands
         {
             get
@@ -122,6 +124,7 @@ namespace DemosCommonCode
         /// otherwise, <b>false</b>.
         /// </value>
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool UseMultithreading
         {
             get

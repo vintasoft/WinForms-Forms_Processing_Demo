@@ -3,6 +3,7 @@
 #endif
 
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -273,6 +274,7 @@ namespace DemosCommonCode.Imaging
         /// Gets or sets a value indicating whether
         /// the highlightLowConfidenceWordsAfterRecognitionCheckBox control must be visible.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowHighlightLowConfidenceWordsCheckBox
         {
             get
@@ -288,6 +290,7 @@ namespace DemosCommonCode.Imaging
         /// <summary>
         /// Gets or sets a value indicating whether the image binarization mode can be changed.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool CanChooseBinarization
         {
             get

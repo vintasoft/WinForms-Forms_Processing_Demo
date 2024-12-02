@@ -32,6 +32,7 @@ using Vintasoft.Imaging.UI.VisualTools;
 using DemosCommonCode;
 using DemosCommonCode.Imaging;
 using DemosCommonCode.Imaging.Codecs;
+using System.ComponentModel;
 
 namespace FormsProcessingDemo
 {
@@ -244,6 +245,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets the default OCR engine settings for newly created OCR fields.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public OcrEngineSettings DefaultOcrEngineSettings
         {
             get
@@ -261,6 +263,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets the default OCR recognition region splitting settings.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public OcrRecognitionRegionSplittingSettings DefaultOcrRecognitionRegionSplittingSettings
         {
             get
@@ -278,6 +281,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets the default handwiting digits OCR engine settings for newly created OCR fields.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public HandwrittenDigitsOcrSettings DefaultHandwritingDigitsOcrSettings
         {
             get
@@ -297,6 +301,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets the default barcode reader settings for newly created barcode fields.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ReaderSettings DefaultBarcodeReaderSettings
         {
             get

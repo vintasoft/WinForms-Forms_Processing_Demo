@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 #if !REMOVE_BARCODE_SDK
@@ -67,6 +68,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets a value indicating whether this control can change expected barcodes.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool CanChangeExpectedBarcodes
         {
             get

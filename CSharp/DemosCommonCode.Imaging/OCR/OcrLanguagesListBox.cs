@@ -3,6 +3,7 @@
 #endif
 
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 using Vintasoft.Imaging.Ocr;
@@ -38,7 +39,8 @@ namespace DemosCommonCode.Imaging
         /// <value>
         /// Default value is <b>null</b>.
         /// </value>
-        [System.ComponentModel.Browsable(false)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public OcrLanguage[] SelectedLanguages
         {
             get

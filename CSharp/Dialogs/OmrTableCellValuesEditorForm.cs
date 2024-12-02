@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
@@ -73,6 +74,7 @@ namespace FormsProcessingDemo
         /// <summary>
         /// Gets or sets orientation of OMR table.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public OmrTableOrientation Orientation
         {
             get
