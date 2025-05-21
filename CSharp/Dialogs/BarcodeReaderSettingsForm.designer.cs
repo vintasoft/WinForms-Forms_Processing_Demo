@@ -42,7 +42,7 @@ namespace FormsProcessingDemo
             this.btOk.TabIndex = 4;
             this.btOk.Text = "OK";
             this.btOk.UseVisualStyleBackColor = true;
-            this.btOk.Click += new System.EventHandler(this.btOk_Click);
+            this.btOk.Click += new System.EventHandler(this.okButton_Click);
             // 
             // btCancel
             // 
@@ -54,7 +54,7 @@ namespace FormsProcessingDemo
             this.btCancel.TabIndex = 5;
             this.btCancel.Text = "Cancel";
             this.btCancel.UseVisualStyleBackColor = true;
-            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            this.btCancel.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // barcodeReaderSettingsControl1
             // 

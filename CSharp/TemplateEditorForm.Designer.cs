@@ -28,15 +28,13 @@ namespace FormsProcessingDemo
         /// </summary>
         private void InitializeComponent()
         {
-            Vintasoft.Imaging.Utils.WinFormsSystemClipboard winFormsSystemClipboard1 = new Vintasoft.Imaging.Utils.WinFormsSystemClipboard();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance1 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance2 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance3 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance4 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailAppearance thumbnailAppearance5 = new Vintasoft.Imaging.UI.ThumbnailAppearance();
             Vintasoft.Imaging.UI.ThumbnailCaption thumbnailCaption1 = new Vintasoft.Imaging.UI.ThumbnailCaption();
-            Vintasoft.Imaging.Codecs.Decoders.RenderingSettings renderingSettings3 = new Vintasoft.Imaging.Codecs.Decoders.RenderingSettings();
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Untitled");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Untitled");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateEditorForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -521,13 +519,7 @@ namespace FormsProcessingDemo
             this.thumbnailViewer1.AllowDrop = true;
             this.thumbnailViewer1.AutoScrollMinSize = new System.Drawing.Size(1, 1);
             this.thumbnailViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thumbnailViewer1.Clipboard = winFormsSystemClipboard1;
             this.thumbnailViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thumbnailViewer1.FastScrollingCursor = System.Windows.Forms.Cursors.SizeAll;
-            this.thumbnailViewer1.FastScrollingInterval = 10;
-            this.thumbnailViewer1.FastScrollingMinDistance = 5F;
-            this.thumbnailViewer1.FastScrollingMouseButton = System.Windows.Forms.MouseButtons.Middle;
-            this.thumbnailViewer1.FastScrollingScale = 0.5F;
             thumbnailAppearance1.BackColor = System.Drawing.Color.Transparent;
             thumbnailAppearance1.BorderColor = System.Drawing.Color.Gray;
             thumbnailAppearance1.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Dotted;
@@ -560,25 +552,19 @@ namespace FormsProcessingDemo
             thumbnailAppearance5.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             thumbnailAppearance5.BorderWidth = 1;
             this.thumbnailViewer1.ThumbnailAppearance = thumbnailAppearance5;
+            thumbnailCaption1.Padding = new Vintasoft.Imaging.PaddingF(0F, 0F, 0F, 0F);
             thumbnailCaption1.TextColor = System.Drawing.Color.Black;
             this.thumbnailViewer1.ThumbnailCaption = thumbnailCaption1;
+            this.thumbnailViewer1.ThumbnailControlPadding = new Vintasoft.Imaging.PaddingF(0F, 0F, 0F, 0F);
             this.thumbnailViewer1.ThumbnailFlowStyle = Vintasoft.Imaging.UI.ThumbnailFlowStyle.WrappedRows;
+            this.thumbnailViewer1.ThumbnailImagePadding = new Vintasoft.Imaging.PaddingF(0F, 0F, 0F, 0F);
             this.thumbnailViewer1.ThumbnailMargin = new System.Windows.Forms.Padding(3);
-            this.thumbnailViewer1.ThumbnailRenderingSettings = null;
             this.thumbnailViewer1.ThumbnailSize = new System.Drawing.Size(100, 100);
             // 
             // imageViewer1
             // 
             this.imageViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageViewer1.Clipboard = winFormsSystemClipboard1;
             this.imageViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imageViewer1.FastScrollingCursor = System.Windows.Forms.Cursors.SizeAll;
-            this.imageViewer1.FastScrollingInterval = 10;
-            this.imageViewer1.FastScrollingMinDistance = 5F;
-            this.imageViewer1.FastScrollingMouseButton = System.Windows.Forms.MouseButtons.Middle;
-            this.imageViewer1.FastScrollingScale = 0.5F;
-            this.imageViewer1.ImageRenderingSettings = renderingSettings3;
-            this.imageViewer1.ImageRotationAngle = 0;
             this.imageViewer1.Location = new System.Drawing.Point(0, 0);
             this.imageViewer1.Name = "imageViewer1";
             this.imageViewer1.ShortcutCopy = System.Windows.Forms.Shortcut.None;
@@ -664,10 +650,10 @@ namespace FormsProcessingDemo
             this.templatesTreeView.LabelEdit = true;
             this.templatesTreeView.Location = new System.Drawing.Point(0, 0);
             this.templatesTreeView.Name = "templatesTreeView";
-            treeNode3.Name = "rootNode";
-            treeNode3.Text = "Untitled";
+            treeNode1.Name = "rootNode";
+            treeNode1.Text = "Untitled";
             this.templatesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode1});
             this.templatesTreeView.Size = new System.Drawing.Size(200, 192);
             this.templatesTreeView.TabIndex = 0;
             this.templatesTreeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.imageViewer1_KeyDown);
@@ -712,13 +698,11 @@ namespace FormsProcessingDemo
             this.barcodeToolStripButton});
             this.imageViewerToolStrip.Location = new System.Drawing.Point(0, 24);
             this.imageViewerToolStrip.Name = "imageViewerToolStrip";
-            this.imageViewerToolStrip.PageCount = 0;
             this.imageViewerToolStrip.PrintButtonEnabled = true;
             this.imageViewerToolStrip.ScanButtonEnabled = true;
             this.imageViewerToolStrip.Size = new System.Drawing.Size(834, 25);
             this.imageViewerToolStrip.TabIndex = 0;
             this.imageViewerToolStrip.Text = "imageViewerToolStrip1";
-            this.imageViewerToolStrip.UseImageViewerImages = true;
             this.imageViewerToolStrip.OpenFile += new System.EventHandler(this.imageViewerToolStrip_OpenFile);
             this.imageViewerToolStrip.SaveFile += new System.EventHandler(this.saveDocumentAsToolStripMenuItem_Click);
             // 
@@ -729,7 +713,7 @@ namespace FormsProcessingDemo
             this.omrRectangleToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.omrRectangleToolStripButton.Name = "omrRectangleToolStripButton";
             this.omrRectangleToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.omrRectangleToolStripButton.Text = "Rectangle";
+            this.omrRectangleToolStripButton.Text = "Rectangular OMR mark";
             this.omrRectangleToolStripButton.Click += new System.EventHandler(this.omrRectangleToolStripButton_Click);
             // 
             // omrEllipseToolStripButton
@@ -739,7 +723,7 @@ namespace FormsProcessingDemo
             this.omrEllipseToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.omrEllipseToolStripButton.Name = "omrEllipseToolStripButton";
             this.omrEllipseToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.omrEllipseToolStripButton.Text = "Ellipse";
+            this.omrEllipseToolStripButton.Text = "Elliptical OMR mark";
             this.omrEllipseToolStripButton.Click += new System.EventHandler(this.omrEllipseToolStripButton_Click);
             // 
             // tableOfOmrRectanglesToolStripButton
@@ -749,7 +733,7 @@ namespace FormsProcessingDemo
             this.tableOfOmrRectanglesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tableOfOmrRectanglesToolStripButton.Name = "tableOfOmrRectanglesToolStripButton";
             this.tableOfOmrRectanglesToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.tableOfOmrRectanglesToolStripButton.Text = "Table of Rects";
+            this.tableOfOmrRectanglesToolStripButton.Text = "Table of rectangular OMR marks";
             this.tableOfOmrRectanglesToolStripButton.Click += new System.EventHandler(this.tableOfOmrRectanglesToolStripButton_Click);
             // 
             // tableOfOmrEllipsesToolStripButton
@@ -759,7 +743,7 @@ namespace FormsProcessingDemo
             this.tableOfOmrEllipsesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tableOfOmrEllipsesToolStripButton.Name = "tableOfOmrEllipsesToolStripButton";
             this.tableOfOmrEllipsesToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.tableOfOmrEllipsesToolStripButton.Text = "Table of Ellipses";
+            this.tableOfOmrEllipsesToolStripButton.Text = "Table of elliptical OMR marks";
             this.tableOfOmrEllipsesToolStripButton.Click += new System.EventHandler(this.tableOfOmrEllipsesToolStripButton_Click);
             // 
             // ocrToolStripButton
@@ -781,7 +765,7 @@ namespace FormsProcessingDemo
             this.handwritingDigitsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.handwritingDigitsToolStripButton.Name = "handwritingDigitsToolStripButton";
             this.handwritingDigitsToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.handwritingDigitsToolStripButton.Text = "Handwriting digits OCR Field";
+            this.handwritingDigitsToolStripButton.Text = "OCR field with handwritten digits ";
             this.handwritingDigitsToolStripButton.Click += new System.EventHandler(this.handwritingDigitsToolStripButton_Click);
             // 
             // barcodeToolStripButton

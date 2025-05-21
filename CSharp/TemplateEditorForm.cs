@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 #if !REMOVE_BARCODE_SDK
-using Vintasoft.Barcode; 
+using Vintasoft.Barcode;
 #endif
 using Vintasoft.Imaging;
 using Vintasoft.Imaging.Codecs.Decoders;
@@ -32,7 +33,6 @@ using Vintasoft.Imaging.UI.VisualTools;
 using DemosCommonCode;
 using DemosCommonCode.Imaging;
 using DemosCommonCode.Imaging.Codecs;
-using System.ComponentModel;
 
 namespace FormsProcessingDemo
 {
@@ -43,6 +43,11 @@ namespace FormsProcessingDemo
     {
 
         #region Fields
+
+        /// <summary>
+        /// A value indicating whether information about the field templates automatic detection was shown.
+        /// </summary>
+        static bool IsInfoAboutFieldTemplatesAutomaticDetectionShown = false;
 
         /// <summary>
         /// Form template manager.
@@ -92,7 +97,7 @@ namespace FormsProcessingDemo
 
 
         /// <summary>
-        /// Indicates that text recognition must be executed in multiple threads.
+        /// A value indicating whether text recognition must be executed in multiple threads.
         /// </summary>
         bool _recognizeTextInMultipleThreads = false;
 
@@ -105,6 +110,11 @@ namespace FormsProcessingDemo
         /// The directory, where Tesseract5.Vintasoft.xXX.dll is located.
         /// </summary>
         string _tesseractOcrDllDirectory = string.Empty;
+
+        /// <summary>
+        /// The table inital size.
+        /// </summary>
+        Size _tableInitalSize = new Size(5, 5);
 
 
         #region File Dialog Filters
@@ -193,15 +203,14 @@ namespace FormsProcessingDemo
 
             // create a visual tool for editing form field templates
             _fieldTemplateEditorTool = new FormFieldTemplateEditorTool();
-            _fieldTemplateEditorTool.FocusedFieldTemplateViewChanged +=
-                new EventHandler(fieldTemplateEditorTool_FocusedFieldTemplateViewChanged);
-            _fieldTemplateEditorTool.MouseDoubleClick +=
-                new VisualToolMouseEventHandler(fieldTemplateEditorTool_MouseDoubleClick);
+            _fieldTemplateEditorTool.FocusedFieldTemplateViewChanged += fieldTemplateEditorTool_FocusedFieldTemplateViewChanged;
+            _fieldTemplateEditorTool.MouseDoubleClick += fieldTemplateEditorTool_MouseDoubleClick;
+            _fieldTemplateEditorTool.FieldTemplateAdding += FieldTemplateEditorTool_FieldTemplateAdded;
 
             // set the template images as the images of the viewer
             imageViewer1.Images = templateManager.TemplateImages;
             // set the visual tool
-            imageViewer1.VisualTool = _fieldTemplateEditorTool;
+            imageViewer1.VisualTool = new CompositeVisualTool(_fieldTemplateEditorTool, _fieldTemplateEditorTool.FieldTemplateWizardTool);
             imageViewer1.FocusedIndexChanged +=
                 new EventHandler<FocusedIndexChangedEventArgs>(imageViewer1_FocusedIndexChanged);
 
@@ -312,7 +321,7 @@ namespace FormsProcessingDemo
             {
                 _defaultBarcodeReaderSettings = value;
             }
-        } 
+        }
 #endif
 
         /// <summary>
@@ -367,6 +376,38 @@ namespace FormsProcessingDemo
         private void buttonOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+
+        /// <summary>
+        /// Processes a command key.
+        /// </summary>
+        /// <param name="msg">A <see cref="T:System.Windows.Forms.Message" />, passed by reference, that represents the window message to process.</param>
+        /// <param name="keyData">One of the <see cref="T:System.Windows.Forms.Keys" /> values that represents the key to process.</param>
+        /// <returns>
+        /// <b>true</b> if the character was processed by the control; otherwise, <b>false</b>.
+        /// </returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // if annotation viewer is selected
+            if (imageViewer1.Focused && imageViewer1.VisualTool != null)
+            {
+                // if selection must be moved to the next annotation
+                if (keyData == Keys.Tab)
+                {
+                    // move selection
+                    if (_fieldTemplateEditorTool.PerformNextItemSelection(true))
+                        return true;
+                }
+                // if selection must be moved to the previous annotation
+                else if (keyData == (Keys.Shift | Keys.Tab))
+                {
+                    // move selection
+                    if (_fieldTemplateEditorTool.PerformNextItemSelection(false))
+                        return true;
+                }
+            }
+            return false;
         }
 
         #endregion
@@ -1014,15 +1055,15 @@ namespace FormsProcessingDemo
         }
 #endif
 
-#endregion
+        #endregion
 
 
-                    #region 'OMR' menu
+        #region 'OMR' menu
 
-                    /// <summary>
-                    /// Adds an OMR rectangular field template to an image and starts building of it.
-                    /// </summary>
-                    private void omrRectangleToolStripButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Adds an OMR rectangular field template to an image and starts building of it.
+        /// </summary>
+        private void omrRectangleToolStripButton_Click(object sender, EventArgs e)
         {
             AddFormFieldTemplate(new OmrRectangularFieldTemplate());
         }
@@ -1062,7 +1103,7 @@ namespace FormsProcessingDemo
         private void barcodeToolStripButton_Click(object sender, EventArgs e)
         {
 #if !REMOVE_BARCODE_SDK
-            AddFormFieldTemplate(new BarcodeFieldTemplate(_defaultBarcodeReaderSettings.Clone())); 
+            AddFormFieldTemplate(new BarcodeFieldTemplate(_defaultBarcodeReaderSettings.Clone()));
 #endif
         }
 
@@ -1075,7 +1116,7 @@ namespace FormsProcessingDemo
             using (BarcodeReaderSettingsForm settingsForm = new BarcodeReaderSettingsForm(_defaultBarcodeReaderSettings))
             {
                 settingsForm.ShowDialog();
-            } 
+            }
 #endif
         }
 
@@ -1275,6 +1316,23 @@ namespace FormsProcessingDemo
                     AddPageTreeNode(image, templatePage.Name);
                 }
                 addingImages.Clear();
+
+                // if information about the field templates automatic detection was not shown
+                if (!IsInfoAboutFieldTemplatesAutomaticDetectionShown)
+                {
+                    // specify that information about the field templates automatic detection was shown
+                    IsInfoAboutFieldTemplatesAutomaticDetectionShown = true;
+                    // show information about the field templates automatic detection
+                    MessageBox.Show(
+                        "The visual tool FormFieldTemplateEditorTool can automatically detect circular and quadratical OMR marks on image. Also visual tool can detect circular and quadratical OMR marks combined into table.\n" +
+                        "If you do not want to manually select region for template of each OMR mark and want to create templates for OMR marks automatically, please do the following steps:\n" +
+                        "1. Select rectangular region on template image. Region must contain one or several circular or quadratical OMR marks.\n" +
+                        "2. Click button ('Rectangular OMR mark', 'Elliptical OMR mark', 'Table of rectangular OMR marks', 'Table of elliptical OMR marks') in toolbar to select the type of OMR marks, which should be detected. Specify the table settings if table with OMR marks must be detected.\n" +
+                        "\n" +
+                        "The visual tool FormFieldTemplateEditorTool will automatically create templates for detected OMR marks if OMR marks are detected in image region.\n" +
+                        "The visual tool FormFieldTemplateEditorTool will create 'standard' template for OMR marks of selected type if OMR marks are not detected in image region.",
+                        "The field templates automatic detection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             finally
             {
@@ -1546,6 +1604,47 @@ namespace FormsProcessingDemo
         #region Field template editor tool
 
         /// <summary>
+        /// Handles the FieldTemplateAdded event of the FieldTemplateEditorTool.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormFieldTemplateViewAddingEventArgs"/> instance containing the event data.</param>
+        private void FieldTemplateEditorTool_FieldTemplateAdded(object sender, FormFieldTemplateViewAddingEventArgs e)
+        {
+            SetTemplateFieldAppearance(e.FormFieldTemplateView);
+            if (string.IsNullOrEmpty(e.FormFieldTemplateView.FieldTemplate.Name))
+            {
+                e.FormFieldTemplateView.FieldTemplate.Name = GenerateNewFieldName();
+            }
+            AddFormFieldTemplateTreeNode(imageViewer1.Image, e.FormFieldTemplateView.FieldTemplate);
+        }
+
+        /// <summary>
+        /// Generates the new name of the field.
+        /// </summary>
+        private string GenerateNewFieldName()
+        {
+            string nameTemplate = "Field{0}";
+            int number = 1;
+            while (number < int.MaxValue)
+            {
+                string newName = string.Format(nameTemplate, number);
+                bool nameFound = false;
+                foreach (FormFieldTemplate field in _fieldTemplateEditorTool.FieldTemplateCollection)
+                {
+                    if (field.Name == newName)
+                    {
+                        nameFound = true;
+                        break;
+                    }
+                }
+                if (!nameFound)
+                    return newName;
+                number++;
+            }
+            throw new InvalidOperationException();
+        }
+
+        /// <summary>
         /// Sets the current form field templates and adjusts the appearances of the views.
         /// </summary>
         /// <param name="fieldTemplates">The field templates.</param>
@@ -1608,7 +1707,7 @@ namespace FormsProcessingDemo
                             propertyGrid1.Refresh();
                         }
                     }
-                } 
+                }
 #endif
 #if !REMOVE_OCR_PLUGIN
                 else if (fieldTemplateView.FieldTemplate is OcrFieldTemplate)
@@ -1675,7 +1774,6 @@ namespace FormsProcessingDemo
         /// <param name="fieldTemplate">A form field template to add.</param>
         private void AddFormFieldTemplate(FormFieldTemplate fieldTemplate)
         {
-            AddFormFieldTemplateTreeNode(imageViewer1.Image, fieldTemplate);
             FormFieldTemplateView fieldTemplateView = FormFieldTemplateViewFactory.CreateView(fieldTemplate);
             SetTemplateFieldAppearance(fieldTemplateView);
             _fieldTemplateEditorTool.AddAndBuild(fieldTemplateView);
@@ -1687,28 +1785,45 @@ namespace FormsProcessingDemo
         /// <param name="cellTemplate">A template of table cell.</param>
         private void AddOmrTemplateTable(OmrFieldTemplate cellTemplate)
         {
-            using (NewTableSetupForm tableSetupForm = new NewTableSetupForm(5, 5))
+            using (NewTableSetupForm tableSetupForm = new NewTableSetupForm(_tableInitalSize.Height, _tableInitalSize.Width))
             {
                 if (tableSetupForm.ShowDialog() == DialogResult.OK)
                 {
+                    _tableInitalSize.Width = tableSetupForm.ColumnCount;
+                    _tableInitalSize.Height = tableSetupForm.RowCount;
                     OmrFieldTemplateTable templateTable = new OmrFieldTemplateTable(
                         cellTemplate,
                         tableSetupForm.RowCount,
                         tableSetupForm.ColumnCount,
                         OmrTableOrientation.Horizontal);
-                    AddFormFieldTemplateTreeNode(imageViewer1.Image, templateTable);
+
                     // set default distance between columns
                     templateTable.DistanceBetweenColumns = 0.2f;
                     // set default distance between rows
                     templateTable.DistanceBetweenRows = 0.2f;
                     templateTable.BuildingFinished += new EventHandler<EventArgs>(
                         templateTable_BuildingFinished);
+
+                    // create a form for editing the OMR template table cell values.
+                    using (OmrTableCellValuesEditorForm cellValuesEditorForm = new OmrTableCellValuesEditorForm(
+                            templateTable.CellValues,
+                            templateTable.Orientation))
+                    {
+                        // show the dialog
+                        if (cellValuesEditorForm.ShowDialog() == DialogResult.OK)
+                        {
+                            // set the orientation of OMR template table
+                            templateTable.Orientation = cellValuesEditorForm.Orientation;
+                        }
+                    }
+
                     // create view for table
                     FormFieldTemplateView templateTableView =
                         FormFieldTemplateViewFactory.CreateView(templateTable);
                     SetTemplateFieldAppearance(templateTableView);
                     // build the table
                     _fieldTemplateEditorTool.AddAndBuild(templateTableView);
+
                 }
             }
         }

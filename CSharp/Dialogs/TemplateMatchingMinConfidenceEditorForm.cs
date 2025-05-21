@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 using Vintasoft.Imaging.FormsProcessing.TemplateMatching;
@@ -11,7 +10,7 @@ namespace FormsProcessingDemo
     /// </summary>
     public partial class TemplateMatchingMinConfidenceEditorForm : Form
     {
-        
+
         #region Fields
 
         /// <summary>
@@ -37,7 +36,7 @@ namespace FormsProcessingDemo
         }
 
         #endregion
-        
+
 
 
         #region Methods

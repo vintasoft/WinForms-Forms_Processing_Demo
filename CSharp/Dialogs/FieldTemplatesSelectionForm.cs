@@ -75,7 +75,7 @@ namespace FormsProcessingDemo
         #region Methods
 
         /// <summary>
-        /// Handles the Click event of the OK button.
+        /// "Ok" button is clicked.
         /// </summary>
         private void btOk_Click(object sender, EventArgs e)
         {
@@ -91,7 +91,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Handles the Click event of the Cancel button.
+        /// "Cancel" button is clicked.
         /// </summary>
         private void btCancel_Click(object sender, EventArgs e)
         {

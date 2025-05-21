@@ -57,7 +57,7 @@ namespace FormsProcessingDemo
 
 
 
-        #region Constructor
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageBinarizationForm"/> class.
@@ -97,8 +97,7 @@ namespace FormsProcessingDemo
 
         bool _applyForAll = false;
         /// <summary>
-        /// Gets a value that indicates whether current settings 
-        /// shall be applied to all remaining images.
+        /// Gets a value indicating whether current settings shall be applied to all remaining images.
         /// </summary>
         public bool ApplyForAll
         {
@@ -110,7 +109,7 @@ namespace FormsProcessingDemo
 
         bool _cancel = false;
         /// <summary>
-        /// Gets a value that indicates whether image binarization was canceled.
+        /// Gets a value indicating whether image binarization was canceled.
         /// </summary>
         public bool Cancel
         {
@@ -122,7 +121,7 @@ namespace FormsProcessingDemo
 
         bool _skip = false;
         /// <summary>
-        /// Gets a value that indicates whether current image shall be skipped.
+        /// Gets a value indicating whether current image shall be skipped.
         /// </summary>
         public bool Skip
         {
@@ -141,7 +140,7 @@ namespace FormsProcessingDemo
         #region PUBLIC
 
         /// <summary>
-        /// Show dialog for an image binarization.
+        /// Shows a dialog for image binarization.
         /// </summary>
         /// <param name="image">Image to binarize.</param>
         /// <returns>
@@ -278,7 +277,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Closes form with DialogResult.OK.
+        /// "Apply" button is clicked.
         /// </summary>
         private void applyButton_Click(object sender, EventArgs e)
         {
@@ -331,7 +330,7 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Updates combo box value from binarization mode of the binarization command.
+        /// Updates combobox value from binarization mode of the binarization command.
         /// </summary>
         private bool UpdateBinarizationModeComboBox()
         {

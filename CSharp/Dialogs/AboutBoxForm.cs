@@ -1,4 +1,3 @@
-
 namespace FormsProcessingDemo
 {
     public partial class AboutBoxForm : DemosCommonCode.AboutBoxBaseForm

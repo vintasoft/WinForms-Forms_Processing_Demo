@@ -11,7 +11,7 @@ namespace FormsProcessingDemo
     public partial class FormFieldViewSettingsEditorForm : Form
     {
 
-        #region Constructor
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FormFieldViewSettingsEditorForm"/> class.

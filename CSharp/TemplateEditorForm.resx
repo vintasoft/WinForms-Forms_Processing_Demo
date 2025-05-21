@@ -185,13 +185,13 @@
   <data name="handwritingDigitsToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFLSURBVDhPY1CyDv4PwxMWbO1SNA/W03GNhYsxMDAw6rrF
-        PVC2CQHzsxunuQPZuXB5qCKyAFjvuZtvKDMA5Gwon2Rw5vpbd1QvsP9rBeIVDGz/vID0OwaO//8ZOP5N
-        g8qtgIux/tMHCaGGAce/CLAkyBCOf2VQHAHknwbidCgNktvBwPtPGKRF3iIQagDIRJAETDP7fyWwoSAA
-        EoNqAFpgA8ZQYBeW+wDCAmkCKQI5F+R8GIAYXAZmQ+QhbCj4//8/I5QJBSBXwGwAaQDZDgNgL0HDBOoi
-        sOvtw3KRA/EdlAUNUCSvgADIRaCwAIUNEKAGIgiAXAAC8FgAhQc4XCLgXgQZAHUBIhBBAOR0mP/BmsDO
-        vQNmw2IBLQwmLNioB2WSB3Ydv02FvEAVA0C4oHlGLihtw/ggDIrnXcdufUUWO3vjTVf//C1QfvB/AMpf
-        2XRBwQ41AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFNSURBVDhPrVM9SwNBEN0UetdY+QPE2GpSGjBiFQJ2chKu
+        0dYiHFilF7FJY6pgZ8q0goKkFws/Wg2myA+I6Sxv132Tt+udnTEPhpuPm9k3b+9UcScyzjq9u/b6dlTa
+        rB35nFKqsFU7Hm9UDyVunnXr1k98nS/NBel9HU7+NwC0Gf8Zz2+f9fwKQXphra+W9b59TlVojArTLmt9
+        n1vSZaTyGoQ6liKGhLpFi238pAJ9Mnuilt6rFb2KlrXKAQdgIgquOTBFGQogxwZ7QFWM2G0k45mHJrwE
+        uqDvIINtDZA6fcIYU6BLgIU7AQ043UFWoiZkJOz3GklWxCk9CppZBQAjaAFtLPIiAmAA+FuAHqJL7FfE
+        ADL4EREAdbe/NAndkfjuFn5p0OndlOjOh8HjxwL+hYUMgJ2eXyX4tl0Mwz0PHoZf2dzL+6R9eX3LODLf
+        hWDZUtF1CWUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="barcodeToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

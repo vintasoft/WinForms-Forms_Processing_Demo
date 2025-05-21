@@ -3,10 +3,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-using System.Xml;
 
 #if !REMOVE_BARCODE_SDK
-using Vintasoft.Barcode; 
+using Vintasoft.Barcode;
 #endif
 using Vintasoft.Imaging.ImageProcessing.Transforms;
 using Vintasoft.Imaging.TypeConverters;
@@ -40,7 +39,7 @@ namespace FormsProcessingDemo
             : this()
         {
             _readerSettings = readerSettings;
-        } 
+        }
 #endif
 
         /// <summary>
@@ -52,7 +51,7 @@ namespace FormsProcessingDemo
             : base(info, context)
         {
 #if !REMOVE_BARCODE_SDK
-            this.ReaderSettings = (ReaderSettings)info.GetValue("ReaderSettings", typeof(ReaderSettings)); 
+            this.ReaderSettings = (ReaderSettings)info.GetValue("ReaderSettings", typeof(ReaderSettings));
 #endif
         }
 
@@ -82,7 +81,7 @@ namespace FormsProcessingDemo
             {
                 _readerSettings = value;
             }
-        } 
+        }
 #endif
 
         #endregion
@@ -164,7 +163,7 @@ namespace FormsProcessingDemo
 
                     return new BarcodeField(this, recognizedBarcode, formRecognitionParams.TemplateSize.Resolution);
                 }
-            } 
+            }
 #else
             return null;
 #endif
@@ -181,7 +180,7 @@ namespace FormsProcessingDemo
             result.Name = this.Name;
 #if !REMOVE_BARCODE_SDK
             if (this.ReaderSettings != null)
-                result.ReaderSettings = this.ReaderSettings.Clone(); 
+                result.ReaderSettings = this.ReaderSettings.Clone();
 #endif
             return result;
         }
@@ -196,7 +195,7 @@ namespace FormsProcessingDemo
         {
             base.GetObjectData(info, context);
 #if !REMOVE_BARCODE_SDK
-            info.AddValue("ReaderSettings", this.ReaderSettings); 
+            info.AddValue("ReaderSettings", this.ReaderSettings);
 #endif
         }
 
@@ -218,7 +217,7 @@ namespace FormsProcessingDemo
                 Vintasoft.Imaging.GdiConverter.Convert(region.RightTop),
                 Vintasoft.Imaging.GdiConverter.Convert(region.RightBottom),
                 Vintasoft.Imaging.GdiConverter.Convert(region.LeftBottom));
-        } 
+        }
 #endif
 
         /// <summary> 

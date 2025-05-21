@@ -37,9 +37,9 @@ namespace FormsProcessingDemo
 
 
         /// <summary>
-        /// Handles the Click event of btOk object.
+        /// Handles the Click event of okButton object.
         /// </summary>
-        private void btOk_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
 #if !REMOVE_BARCODE_SDK
             barcodeReaderSettingsControl1.SetReaderSettings(_readerSettings); 
@@ -48,9 +48,9 @@ namespace FormsProcessingDemo
         }
 
         /// <summary>
-        /// Handles the Click event of btCancel object.
+        /// Handles the Click event of cancelButton object.
         /// </summary>
-        private void btCancel_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }

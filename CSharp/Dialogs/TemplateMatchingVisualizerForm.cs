@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Globalization;
+using System.Text;
 using System.Windows.Forms;
 
 using Vintasoft.Imaging;
@@ -15,11 +16,9 @@ using Vintasoft.Imaging.ImageProcessing.Transforms;
 using Vintasoft.Imaging.UI;
 using Vintasoft.Imaging.UI.VisualTools;
 using Vintasoft.Imaging.UI.VisualTools.GraphicObjects;
-using Vintasoft.Imaging.Utils;
 
 using DemosCommonCode;
 using DemosCommonCode.Imaging.Codecs;
-using System.Text;
 
 namespace FormsProcessingDemo
 {
@@ -42,17 +41,17 @@ namespace FormsProcessingDemo
         int[] _zoomValues = new int[] { 1, 5, 10, 25, 50, 75, 100, 125, 150, 200, 400, 600, 800, 1000 };
 
         /// <summary>
-        /// Indicates whether the filled form image must be aligned to the template form image.
+        /// A value indicating whether the filled form image must be aligned to the template form image.
         /// </summary>
         bool _alignFilledImage;
 
         /// <summary>
-        /// Indicates whether image viewers must display processed images.
+        /// A value indicating whether image viewers must display processed images.
         /// </summary>
         bool _displayProcessedImages;
 
         /// <summary>
-        /// Indicates whether template matching is executed.
+        /// A value indicating whether template matching is executed.
         /// </summary>
         bool _isTemplateMatchingExecuted = false;
 

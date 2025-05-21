@@ -41,7 +41,7 @@ namespace FormsProcessingDemo
 
 
 
-        #region Constructor
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OmrTableCellValuesEditorForm"/> class.
