@@ -1,4 +1,4 @@
-namespace FormsProcessingDemo
+﻿namespace FormsProcessingDemo
 {
     partial class TemplateEditorForm
     {
@@ -95,7 +95,7 @@ namespace FormsProcessingDemo
             this.templatesTreeView = new System.Windows.Forms.TreeView();
             this.propertyGridGroupBox = new System.Windows.Forms.GroupBox();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.imageViewerToolStrip = new DemosCommonCode.Imaging.ImageViewerToolStrip();
+            this.imageViewerToolStrip = new CommonCode.Imaging.ImageViewerToolStrip();
             this.omrRectangleToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.omrEllipseToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tableOfOmrRectanglesToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -818,7 +818,7 @@ namespace FormsProcessingDemo
         private System.Windows.Forms.OpenFileDialog openImageFileDialog;
         private Vintasoft.Imaging.UI.ImageViewer imageViewer1;
         private Vintasoft.Imaging.UI.ThumbnailViewer thumbnailViewer1;
-        private DemosCommonCode.Imaging.ImageViewerToolStrip imageViewerToolStrip;
+        private CommonCode.Imaging.ImageViewerToolStrip imageViewerToolStrip;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ToolStripMenuItem pageToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;

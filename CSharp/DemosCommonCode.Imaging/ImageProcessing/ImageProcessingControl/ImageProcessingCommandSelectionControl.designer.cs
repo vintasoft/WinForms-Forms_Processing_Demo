@@ -1,4 +1,4 @@
-namespace DemosCommonCode
+﻿namespace CommonCode
 {
     partial class ImageProcessingCommandSelectionControl
     {
@@ -37,7 +37,7 @@ namespace DemosCommonCode
             this.removeAllCommandsFromList = new System.Windows.Forms.Button();
             this.setCommandPropertiesButton = new System.Windows.Forms.Button();
             this.removeCommandFromListButton = new System.Windows.Forms.Button();
-            this.imageProcessingCommandsViewer1 = new DemosCommonCode.ImageProcessingCommandListControl();
+            this.imageProcessingCommandsViewer1 = new CommonCode.ImageProcessingCommandListControl();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();

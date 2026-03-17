@@ -1,4 +1,4 @@
-namespace DemosCommonCode
+﻿namespace CommonCode
 {
     partial class ImageProcessingControl
     {
@@ -36,7 +36,7 @@ namespace DemosCommonCode
             this.processedImageViewer = new Vintasoft.Imaging.UI.ImageViewer();
             this.executeCommandOnImageButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.imageProcessingCommandsEditor1 = new DemosCommonCode.ImageProcessingCommandSelectionControl();
+            this.imageProcessingCommandsEditor1 = new CommonCode.ImageProcessingCommandSelectionControl();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();

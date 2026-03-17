@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
-using DemosCommonCode;
+using CommonCode;
 
 using Vintasoft.Imaging.FormsProcessing.FormRecognition.Omr;
 

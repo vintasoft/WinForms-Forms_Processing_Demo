@@ -17,8 +17,9 @@ using Vintasoft.Imaging.UI;
 using Vintasoft.Imaging.UI.VisualTools;
 using Vintasoft.Imaging.UI.VisualTools.GraphicObjects;
 
-using DemosCommonCode;
-using DemosCommonCode.Imaging.Codecs;
+using CommonCode;
+using CommonCode.Imaging.Codecs;
+using CommonCode.Imaging;
 
 namespace FormsProcessingDemo
 {
@@ -1280,7 +1281,7 @@ namespace FormsProcessingDemo
                 new RenderingSettings(300, 300)))
             {
                 // select image from image collection
-                VintasoftImage image = DemosCommonCode.Imaging.SelectImageForm.SelectImageFromFile(filename);
+                VintasoftImage image = SelectImageForm.SelectImageFromFile(filename);
 
                 // if the selected image is null 
                 if (image == null)

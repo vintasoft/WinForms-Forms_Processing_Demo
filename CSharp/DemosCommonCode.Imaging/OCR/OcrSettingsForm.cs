@@ -11,7 +11,7 @@ using Vintasoft.Imaging.ImageProcessing;
 using Vintasoft.Imaging.Ocr;
 using Vintasoft.Imaging.Ocr.Tesseract;
 
-namespace DemosCommonCode.Imaging
+namespace CommonCode.Imaging
 {
     /// <summary>
     /// A form that allows to edit the settings of OCR engine manager.

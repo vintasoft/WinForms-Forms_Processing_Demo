@@ -1,4 +1,4 @@
-namespace DemosCommonCode
+﻿namespace CommonCode
 {
     partial class ImageProcessingForm
     {
@@ -35,10 +35,10 @@ namespace DemosCommonCode
             this.imageViewer1 = new Vintasoft.Imaging.UI.ImageViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.enableImageProcessingCheckBox = new System.Windows.Forms.CheckBox();
-            this.imageProcessingCommandSelectionControl1 = new DemosCommonCode.ImageProcessingCommandSelectionControl();
+            this.imageProcessingCommandSelectionControl1 = new CommonCode.ImageProcessingCommandSelectionControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.processImageProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.imageViewerToolStrip1 = new DemosCommonCode.Imaging.ImageViewerToolStrip();
+            this.imageViewerToolStrip1 = new CommonCode.Imaging.ImageViewerToolStrip();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();

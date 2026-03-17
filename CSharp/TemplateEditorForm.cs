@@ -30,9 +30,9 @@ using Vintasoft.Imaging.Ocr.ML.HandwrittenDigits;
 using Vintasoft.Imaging.UI;
 using Vintasoft.Imaging.UI.VisualTools;
 
-using DemosCommonCode;
-using DemosCommonCode.Imaging;
-using DemosCommonCode.Imaging.Codecs;
+using CommonCode;
+using CommonCode.Imaging;
+using CommonCode.Imaging.Codecs;
 
 namespace FormsProcessingDemo
 {

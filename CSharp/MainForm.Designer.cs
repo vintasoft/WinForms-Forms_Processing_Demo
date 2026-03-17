@@ -1,4 +1,4 @@
-namespace FormsProcessingDemo
+﻿namespace FormsProcessingDemo
 {
     partial class MainForm
     {
@@ -106,7 +106,7 @@ namespace FormsProcessingDemo
             this.recognitionResultTextBox = new System.Windows.Forms.TextBox();
             this.recognitionLogTabPage = new System.Windows.Forms.TabPage();
             this.recognitionLogTextBox = new System.Windows.Forms.TextBox();
-            this.filledImageViewerToolStrip = new DemosCommonCode.Imaging.ImageViewerToolStrip();
+            this.filledImageViewerToolStrip = new CommonCode.Imaging.ImageViewerToolStrip();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.splitContainerLeft.Panel1.SuspendLayout();
@@ -844,7 +844,7 @@ namespace FormsProcessingDemo
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Vintasoft.Imaging.UI.ThumbnailViewer sourceThumbnailViewer;
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
-        private DemosCommonCode.Imaging.ImageViewerToolStrip filledImageViewerToolStrip;
+        private CommonCode.Imaging.ImageViewerToolStrip filledImageViewerToolStrip;
         private System.Windows.Forms.SplitContainer splitContainerLeft;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel imageInfoLabel;

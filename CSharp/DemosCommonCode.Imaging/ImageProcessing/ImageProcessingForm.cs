@@ -6,7 +6,7 @@ using Vintasoft.Imaging;
 using Vintasoft.Imaging.ImageProcessing;
 
 
-namespace DemosCommonCode
+namespace CommonCode
 {
     /// <summary>
     /// A form that allows to:

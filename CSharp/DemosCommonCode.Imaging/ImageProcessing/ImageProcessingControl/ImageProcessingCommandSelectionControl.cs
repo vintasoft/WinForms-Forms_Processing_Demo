@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 using Vintasoft.Imaging.ImageProcessing;
 
-using DemosCommonCode.Imaging;
+using CommonCode.Imaging;
 
 
-namespace DemosCommonCode
+namespace CommonCode
 {
     /// <summary>
     /// A control that allows to select the image processing commands.

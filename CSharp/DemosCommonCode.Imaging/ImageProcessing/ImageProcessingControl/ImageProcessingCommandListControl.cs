@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Vintasoft.Imaging.ImageProcessing;
 
 
-namespace DemosCommonCode
+namespace CommonCode
 {
     /// <summary>
     /// A control that allows to view the available image processing commands.

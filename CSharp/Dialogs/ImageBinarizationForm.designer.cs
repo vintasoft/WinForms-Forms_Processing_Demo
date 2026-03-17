@@ -1,4 +1,4 @@
-namespace FormsProcessingDemo
+﻿namespace FormsProcessingDemo
 {
     partial class ImageBinarizationForm
 	{
@@ -36,7 +36,7 @@ namespace FormsProcessingDemo
             this.label1 = new System.Windows.Forms.Label();
             this.settingsButton = new System.Windows.Forms.Button();
             this.renderingSettingsButton = new System.Windows.Forms.Button();
-            this.imageViewerToolStrip1 = new DemosCommonCode.Imaging.ImageViewerToolStrip();
+            this.imageViewerToolStrip1 = new CommonCode.Imaging.ImageViewerToolStrip();
             this.SuspendLayout();
             // 
             // applyButton
@@ -181,6 +181,6 @@ namespace FormsProcessingDemo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Button renderingSettingsButton;
-        private DemosCommonCode.Imaging.ImageViewerToolStrip imageViewerToolStrip1;
+        private CommonCode.Imaging.ImageViewerToolStrip imageViewerToolStrip1;
 	}
 }

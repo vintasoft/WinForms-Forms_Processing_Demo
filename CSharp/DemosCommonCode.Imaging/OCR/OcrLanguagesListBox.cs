@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Vintasoft.Imaging.Ocr;
 
 
-namespace DemosCommonCode.Imaging
+namespace CommonCode.Imaging
 {
     /// <summary>
     /// A control that allows to manage list of selected OCR languages.

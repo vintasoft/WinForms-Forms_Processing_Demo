@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DemosCommonCode;
+using CommonCode;
 
 using Vintasoft.Imaging.FormsProcessing.FormRecognition.Formatters;
 

@@ -1,4 +1,4 @@
-namespace FormsProcessingDemo
+﻿namespace FormsProcessingDemo
 {
     partial class TemplateMatchingVisualizerForm
     {
@@ -69,11 +69,11 @@ namespace FormsProcessingDemo
             this.keyZoneLocationDeviationNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nonMatchedColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.nonMatchedColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.matchedColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.matchedColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.label1 = new System.Windows.Forms.Label();
-            this.sourceColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.sourceColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.zoomOutButton = new System.Windows.Forms.ToolStripButton();
             this.zoomTextBox = new System.Windows.Forms.ToolStripTextBox();
@@ -658,11 +658,11 @@ namespace FormsProcessingDemo
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private DemosCommonCode.CustomControls.ColorPanelControl nonMatchedColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl nonMatchedColorPanelControl;
         private System.Windows.Forms.Label label2;
-        private DemosCommonCode.CustomControls.ColorPanelControl matchedColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl matchedColorPanelControl;
         private System.Windows.Forms.Label label1;
-        private DemosCommonCode.CustomControls.ColorPanelControl sourceColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl sourceColorPanelControl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown keyZoneLocationDeviationNumericUpDown;
         private System.Windows.Forms.ToolStripMenuItem showKeyZoneRecognierPreprocessingToolStripMenuItem;

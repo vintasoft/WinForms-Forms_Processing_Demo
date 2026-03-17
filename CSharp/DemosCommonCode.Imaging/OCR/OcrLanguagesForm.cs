@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 using Vintasoft.Imaging.Ocr;
 
-namespace DemosCommonCode.Imaging
+namespace CommonCode.Imaging
 {
     /// <summary>
     /// A form that allows to edit the language settings of OCR engine manager.

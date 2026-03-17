@@ -13,9 +13,9 @@ using Vintasoft.Imaging.UI;
 using Vintasoft.Imaging.UI.VisualTools;
 using Vintasoft.Imaging.Drawing.Gdi;
 
-using DemosCommonCode.Imaging;
+using CommonCode.Imaging;
 
-namespace DemosCommonCode
+namespace CommonCode
 {
     /// <summary>
     /// A control that allows to:

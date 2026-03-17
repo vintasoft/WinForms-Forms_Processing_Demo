@@ -1,4 +1,4 @@
-namespace FormsProcessingDemo
+﻿namespace FormsProcessingDemo
 {
     partial class FormFieldViewSettingsEditorForm
     {
@@ -33,13 +33,13 @@ namespace FormsProcessingDemo
             this.certainObjectsBorderWidthNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.uncertainObjectsBorderWidthLabel = new System.Windows.Forms.Label();
             this.certainObjectsBorderWidthLabel = new System.Windows.Forms.Label();
-            this.uncertainObjectsBorderColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.uncertainObjectsBorderColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.uncertainObjectsBorderColorLabel = new System.Windows.Forms.Label();
-            this.certainObjectsBorderColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.certainObjectsBorderColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.certainObjectsBorderColorLabel = new System.Windows.Forms.Label();
-            this.uncertainObjectsBackgroundColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.uncertainObjectsBackgroundColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.uncertainObjectsBackgroundColorLabel = new System.Windows.Forms.Label();
-            this.certainObjectsBackgroundColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.certainObjectsBackgroundColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.label100 = new System.Windows.Forms.Label();
             this.label0 = new System.Windows.Forms.Label();
             this.certainObjectsBackgroundColorLabel = new System.Windows.Forms.Label();
@@ -47,14 +47,14 @@ namespace FormsProcessingDemo
             this.confidenceThresholdLabel = new System.Windows.Forms.Label();
             this.omrFieldSettingsGroupBox = new System.Windows.Forms.GroupBox();
             this.objectsBorderWidthNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.filledObjectsBackgroundColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.filledObjectsBackgroundColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.objectsBorderWidthLabel = new System.Windows.Forms.Label();
             this.filledObjectsBackgroundColorLabel = new System.Windows.Forms.Label();
-            this.objectsBorderColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.objectsBorderColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.unfilledObjectsBackgroundColorLabel = new System.Windows.Forms.Label();
             this.objectsBorderColorLabel = new System.Windows.Forms.Label();
-            this.unfilledObjectsBackgroundColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
-            this.undefinedObjectsBorderColorPanelControl = new DemosCommonCode.CustomControls.ColorPanelControl();
+            this.unfilledObjectsBackgroundColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
+            this.undefinedObjectsBorderColorPanelControl = new CommonCode.CustomControls.ColorPanelControl();
             this.undefinedObjectsBorderColorLabel = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
@@ -418,26 +418,26 @@ namespace FormsProcessingDemo
         private System.Windows.Forms.Label certainObjectsBackgroundColorLabel;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.Label label0;
-        private DemosCommonCode.CustomControls.ColorPanelControl certainObjectsBackgroundColorPanelControl;
-        private DemosCommonCode.CustomControls.ColorPanelControl uncertainObjectsBackgroundColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl certainObjectsBackgroundColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl uncertainObjectsBackgroundColorPanelControl;
         private System.Windows.Forms.Label uncertainObjectsBackgroundColorLabel;
-        private DemosCommonCode.CustomControls.ColorPanelControl uncertainObjectsBorderColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl uncertainObjectsBorderColorPanelControl;
         private System.Windows.Forms.Label uncertainObjectsBorderColorLabel;
-        private DemosCommonCode.CustomControls.ColorPanelControl certainObjectsBorderColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl certainObjectsBorderColorPanelControl;
         private System.Windows.Forms.Label certainObjectsBorderColorLabel;
         private System.Windows.Forms.Label uncertainObjectsBorderWidthLabel;
         private System.Windows.Forms.Label certainObjectsBorderWidthLabel;
         private System.Windows.Forms.NumericUpDown uncertainObjectsBorderWidthNumericUpDown;
         private System.Windows.Forms.NumericUpDown certainObjectsBorderWidthNumericUpDown;
         private System.Windows.Forms.NumericUpDown objectsBorderWidthNumericUpDown;
-        private DemosCommonCode.CustomControls.ColorPanelControl filledObjectsBackgroundColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl filledObjectsBackgroundColorPanelControl;
         private System.Windows.Forms.Label objectsBorderWidthLabel;
         private System.Windows.Forms.Label filledObjectsBackgroundColorLabel;
-        private DemosCommonCode.CustomControls.ColorPanelControl objectsBorderColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl objectsBorderColorPanelControl;
         private System.Windows.Forms.Label unfilledObjectsBackgroundColorLabel;
         private System.Windows.Forms.Label objectsBorderColorLabel;
-        private DemosCommonCode.CustomControls.ColorPanelControl unfilledObjectsBackgroundColorPanelControl;
-        private DemosCommonCode.CustomControls.ColorPanelControl undefinedObjectsBorderColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl unfilledObjectsBackgroundColorPanelControl;
+        private CommonCode.CustomControls.ColorPanelControl undefinedObjectsBorderColorPanelControl;
         private System.Windows.Forms.Label undefinedObjectsBorderColorLabel;
     }
 }

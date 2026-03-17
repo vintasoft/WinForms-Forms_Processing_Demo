@@ -1,4 +1,4 @@
-namespace DemosCommonCode.Imaging
+﻿namespace CommonCode.Imaging
 {
     partial class OcrLanguagesForm
     {
@@ -34,7 +34,7 @@ namespace DemosCommonCode.Imaging
             this.supportedLanguagesListBox = new System.Windows.Forms.ListBox();
             this.supportedLanguagesLabel = new System.Windows.Forms.Label();
             this.addLanguage = new System.Windows.Forms.Button();
-            this.ocrLanguagesListBox1 = new DemosCommonCode.Imaging.OcrLanguagesListBox();
+            this.ocrLanguagesListBox1 = new CommonCode.Imaging.OcrLanguagesListBox();
             this.SuspendLayout();
             // 
             // downloadAdditionalLanguageDictionariesButton

@@ -1,12 +1,12 @@
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 using Vintasoft.Imaging;
 using Vintasoft.Imaging.Codecs.Decoders;
 using Vintasoft.Imaging.ImageProcessing;
 
-using DemosCommonCode;
-using DemosCommonCode.Imaging;
+using CommonCode;
+using CommonCode.Imaging;
 
 namespace FormsProcessingDemo
 {
