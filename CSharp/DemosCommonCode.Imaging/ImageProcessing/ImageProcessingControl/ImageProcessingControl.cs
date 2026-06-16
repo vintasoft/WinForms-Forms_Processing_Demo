@@ -321,13 +321,14 @@ namespace CommonCode
 
 #if !REMOVE_DOCCLEANUP_PLUGIN
                         // if result is a document segmentation result
-                        DocumentSegmentationCommandResult docSegmentationResult = result as DocumentSegmentationCommandResult;
-                        if (docSegmentationResult != null)
+                        DocumentSegmentationCommandResult documentSegmentationResult = result as DocumentSegmentationCommandResult;
+                        if (documentSegmentationResult != null)
                         {
                             // highlight the document segmentation result in the viewer of processed image
-                            processedImageViewer.VisualTool = CreateHighlightTool(docSegmentationResult.Regions);
+                            processedImageViewer.VisualTool = CreateHighlightTool(documentSegmentationResult.Regions);
                         }
 
+                        // if result is a halftone recogntion result
                         HalftoneRecognitionCommandResult halftoneRecognitionResult = result as HalftoneRecognitionCommandResult;
                         if (halftoneRecognitionResult != null)
                         {
@@ -343,12 +344,20 @@ namespace CommonCode
                             }
                         }
 
-                        // if result is a image segmentation result
-                        ImageSegmentationCommandResult imgSegmentationResult = result as ImageSegmentationCommandResult;
-                        if (imgSegmentationResult != null)
+                        // if result is an image segmentation result
+                        ImageSegmentationCommandResult imageSegmentationResult = result as ImageSegmentationCommandResult;
+                        if (imageSegmentationResult != null)
                         {
                             // highlight the image segmentation result in the viewer of processed image
-                            processedImageViewer.VisualTool = CreateHighlightTool(imgSegmentationResult.Regions);
+                            processedImageViewer.VisualTool = CreateHighlightTool(imageSegmentationResult.Regions);
+                        }
+
+                        // if result is a line recognition result
+                        LineRecognitionCommandResult lineRecognitionResult = result as LineRecognitionCommandResult;
+                        if (lineRecognitionResult != null)
+                        {
+                            // highlight the image segmentation result in the viewer of processed image
+                            processedImageViewer.VisualTool = CreateHighlightTool(lineRecognitionResult.Lines);
                         }
 #endif
 
@@ -594,6 +603,58 @@ namespace CommonCode
 
             return highlightTool;
         }
+
+        /// <summary>
+        /// Creates the highlight tool.
+        /// </summary>
+        /// <param name="lines">Lines.</param>
+        private VisualTool CreateHighlightTool(ReadOnlyCollection<LineInfo> lines)
+        {
+            // create an array that contains line regions
+
+            List<ImageRegion> lineRegions = new List<ImageRegion>();
+            for (int i = 0; i < lines.Count; i++)
+            {
+                LineInfo lineInfo = lines[i];
+                for (int j = 0; j < lineInfo.Points.Count; j++)
+                {
+                    lineRegions.Add(GetImageRegionForLine(lineInfo.Points[j]));
+                }
+            }
+
+            // create the highlight objects for regions
+
+            SolidBrush highlightBrush = new SolidBrush(Color.FromArgb(100, Color.Yellow));
+            ColoredObjects<ImageRegion> highlightLineRegions = new ColoredObjects<ImageRegion>(lineRegions);
+            highlightLineRegions.Pen = Pens.Red;
+            highlightLineRegions.Brush = highlightBrush;
+
+            // create the highlight tool
+            HighlightTool<ImageRegion> highlightTool = new HighlightTool<ImageRegion>();
+            // add highlight objects to the highlight tool
+            highlightTool.Items.Add(highlightLineRegions);
+
+            return highlightTool;
+        }
+
+        private ImageRegion GetImageRegionForLine(Point[] points)
+        {
+            int minX = points[0].X, minY = points[0].Y;
+            int maxX = minX, maxY = minY;
+            for (int i = 0; i < points.Length; i++)
+            {
+                if (minX > points[i].X)
+                    minX = points[i].X;
+                if (minY > points[i].Y)
+                    minY = points[i].Y;
+                if (maxX < points[i].X)
+                    maxX = points[i].X;
+                if (maxY < points[i].Y)
+                    maxY = points[i].Y;
+            }
+
+            return new ImageRegion(minX, minY, maxX - minX, maxY - minY);
+        }
 #endif
 
         /// <summary>
@@ -726,7 +787,7 @@ namespace CommonCode
             destination.ScrollToPoint(imageLocation);
             destination.Invalidate();
             source.Invalidate();
-            Update();            
+            Update();
         }
 
         /// <summary>
